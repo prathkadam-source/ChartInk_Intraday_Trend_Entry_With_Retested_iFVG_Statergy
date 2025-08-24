@@ -41,6 +41,7 @@ public class WatchlistPage extends BaseTest {
 
     public static final String xpath_For_StockName_of_Add_Stocklist = "//*[contains (@class,'watchlist')]//*[text()=\"%s\"]";
 //    public static final String xpath_For_StockName_of_Add_Stocklist = "//*[contains (@class,'watchlist')]//*[contains(text(),\"%s\")]";
+    public static final String text_No_Stock_Present = "No Stocks Present..";
 
 
     public WatchlistPage() {
@@ -453,10 +454,24 @@ public class WatchlistPage extends BaseTest {
                 //get stock full name
                 stockFullName = fAndOStocksprop.getProperty(StockName).trim();
 
-                helper.sendKeysSafe(WebElement_Search_Textbox,stockFullName);
-                //Thread.sleep(1000);
-                helper.safeFindElement(get_WebElement_Of_StockName_Of_Add_StockList(stockFullName),2);
+               helper.sendKeysSafe(WebElement_Search_Textbox,stockFullName);
+
+//                if ((StockName.equals("M&MFIN")) || (StockName.contains("M&M")) || StockName.equals("LT")) {       // For stocks like 	M&MFIN, M&M
+//                    helper.sendKeysSafe(WebElement_Search_Textbox,stockFullName);
+//                }else {
+//                    helper.sendKeysSafe(WebElement_Search_Textbox,StockName);
+//                }
+
+                // to handle no stock present condition eventhough correct stock details are ebntered
+//                if ( helper.safeFindElement(get_WebElement_Of_StockName_Of_Add_StockList(this.text_No_Stock_Present),2)){
+//                    helper.sendKeysSafe(WebElement_Search_Textbox,stockFullName);
+//                }
+                if (helper.safeFindElement(get_WebElement_Of_StockName_Of_Add_StockList(stockFullName),2) == false){
+                    helper.sendKeysSafe(WebElement_Search_Textbox,stockFullName);
+                }
+                //helper.safeFindElement(get_WebElement_Of_StockName_Of_Add_StockList(stockFullName),2);
                 Thread.sleep(500);
+
                 //helper.safeClick(get_WebElement_Of_StockName_Of_Add_StockList(stockFullName));
                 helper.forceClickByJavaScript(get_WebElement_Of_StockName_Of_Add_StockList(stockFullName));
 
@@ -471,14 +486,15 @@ public class WatchlistPage extends BaseTest {
                 }  else {
 
                     System.out.println("Stock '" + StockName + "' not added to Watchlist '" + Watchlist_Name + "' ");
-                    ReportUtil.report(false, "FAIL",
+                    ReportUtil.report(true, "FAIL",
                             "Stock '" + StockName + "' not added to Watchlist '" + Watchlist_Name + "' ", "");
                 }
 
             } catch (Exception e) {
 
                 System.out.println("add_Stocks_To_Watchlist: " + e.getMessage());
-                ReportUtil.report( false, "FAIL", "add_Stocks_To_Watchlist, ",  e.getMessage()+
+//                continue;
+                ReportUtil.report( true, "FAIL", "add_Stocks_To_Watchlist, ",  e.getMessage()+
                         ": Not able to add Stock '" + StockName + "' into Watchlist '" + Watchlist_Name + "'" );
             }
         }

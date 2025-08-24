@@ -78,6 +78,8 @@ public class AlertPage extends BaseTest {
                     default_Alert_Time_Stamp = Constants.ST1_DEFAULT_ALERT_TIMESTAMP;
                 }else if(TextMessage.contains(Constants.ST2_CONDITION_1)){
                     default_Alert_Time_Stamp = Constants.ST2_DEFAULT_ALERT_TIMESTAMP;
+                }else if(TextMessage.contains(Constants.ST3_CONDITION_1)){
+                    default_Alert_Time_Stamp = Constants.ST3_DEFAULT_ALERT_TIMESTAMP;
                 }
 
                 // Verify Alert is latest or not
@@ -89,6 +91,8 @@ public class AlertPage extends BaseTest {
                         Constants.ST1_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
                     }else if(TextMessage.contains(Constants.ST2_CONDITION_1)){
                         Constants.ST2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
+                    }else if(TextMessage.contains(Constants.ST3_CONDITION_1)) {
+                        Constants.ST3_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
                     }
 
                     Constants.LATEST_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
