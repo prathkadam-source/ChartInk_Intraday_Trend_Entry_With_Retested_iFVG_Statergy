@@ -121,9 +121,9 @@ public class NewTabsSetUp extends BaseTest {
                 } else {
                     ReportUtil.report( false, "FAIL", "Verify " + textToBeVerified + " " + tabName + " Webpage Displayed, ",  textToBeVerified + " " + tabName + " Webpage NOT Displayed");
                 }
-                }
-
             }
+
+        }
 
         catch (Exception e) {
 
@@ -143,23 +143,23 @@ public class NewTabsSetUp extends BaseTest {
             switch (tabName) {
                 case Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION );
                     browser_Refresh();
                     Thread.sleep(1000);
+                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION );
                     break;
 
                 case Constants.TAB_WATCHLISTPAGE_NAME_ST_1_Cndt_2_Watchlist:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Watchlist_Name_Link, Constants.TAB_WATCHLISTPAGE_NAME_ST_1_Cndt_2_Watchlist);
                     browser_Refresh();
                     Thread.sleep(1000);
+                    this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Watchlist_Name_Link, Constants.TAB_WATCHLISTPAGE_NAME_ST_1_Cndt_2_Watchlist);
                     break;
 
                 case Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION );
                     browser_Refresh();
                     Thread.sleep(1000);
+                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION );
                     break;
 
                 case Constants.TAB_WATCHLISTPAGE_NAME_ST_2_Cndt_2_Watchlist:
@@ -171,23 +171,23 @@ public class NewTabsSetUp extends BaseTest {
 
                 case Constants.TAB_ALERTPAGE_NAME_ST_3_FIRST_CONDITION:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_3_FIRST_CONDITION );
                     browser_Refresh();
                     Thread.sleep(1000);
+                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_3_FIRST_CONDITION );
                     break;
 
                 case Constants.TAB_WATCHLISTPAGE_NAME_ST_3_Cndt_2_Watchlist:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Watchlist_Name_Link, Constants.TAB_WATCHLISTPAGE_NAME_ST_3_Cndt_2_Watchlist);
                     browser_Refresh();
                     Thread.sleep(1000);
+                    this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Watchlist_Name_Link, Constants.TAB_WATCHLISTPAGE_NAME_ST_3_Cndt_2_Watchlist);
                     break;
 
                 case Constants.TAB_DEFAULT_WATCHLIST_PAGE:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Selected_Watchlist_SubTab,"");
                     browser_Refresh();
                     Thread.sleep(1000);
+                    this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Selected_Watchlist_SubTab,"");
                     break;
             }
 
