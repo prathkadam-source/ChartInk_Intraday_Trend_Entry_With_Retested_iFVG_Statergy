@@ -47,7 +47,7 @@ public class RunTimeDataStore {
         }
     }
 
-    public class ST2_Cndt2_Watchlists_Details {
+    public class ST1_Watchlists_Details {
 
         // Global HashMap accessible from anywhere
         public static final HashMap<String, String> map = new HashMap<>();
@@ -100,7 +100,7 @@ public class RunTimeDataStore {
                 for (String key : watchlist_Data.stringPropertyNames()) {
                     wtlist_value = watchlist_Data.getProperty(key);
                     wtlist_Key = key;  // Example: Add "new_" prefix
-                    ST2_Cndt2_Watchlists_Details.setValue(wtlist_Key,wtlist_value);
+                    ST1_Watchlists_Details.setValue(wtlist_Key,wtlist_value);
                 }
 
             } catch (IOException e) {
@@ -167,7 +167,7 @@ public class RunTimeDataStore {
                 for (String key : FAndO_Stocks_Data.stringPropertyNames()) {
                     wtlist_value = FAndO_Stocks_Data.getProperty(key);
                     wtlist_Key = key;  // Example: Add "new_" prefix
-                    ST2_Cndt2_Watchlists_Details.setValue(wtlist_Key,wtlist_value);
+                    FAndO_Stocks_Details.setValue(wtlist_Key,wtlist_value);
                 }
 
             } catch (IOException e) {

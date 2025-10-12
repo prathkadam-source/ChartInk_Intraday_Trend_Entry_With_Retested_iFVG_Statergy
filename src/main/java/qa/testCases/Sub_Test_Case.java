@@ -48,8 +48,17 @@ public class Sub_Test_Case extends BaseTest {
 
             // Textfile to Log updates when ST1_Cndt2-watchlists are updated for alerts received for ST1_Cndt1
             // this file is use to record the out details
-            Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES);
+            Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A);
+
+            Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B);
+
+            Constants.TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES);
+
+
+            //----------------------------------------
 
             // Textfile to Log updates when ST2_Cndt2-watchlists are updated for alerts received for ST2_Cndt1
             // this file is use to record the out details
@@ -117,10 +126,10 @@ public class Sub_Test_Case extends BaseTest {
                 System.out.println(Interval);
                 ReportUtil.report(true, "INFO", Interval, "");
 
-                test_Case_Stratergy_1.Buy_TradesFrom_Positive_Supertrend_Of_Buy_Trades();
-                test_Case_Stratergy_2.Sell_Trades_From_Positive_Supertrend_Of_Sell_Trades();
-                test_Case_Stratergy_3.Sell_Trades_From_Negative_Supertrend_Of_Sell_Trades();
-                test_Case_Stratergy_4.Sell_Trades_From_Negative_Supertrend_Of_Buy_Trades();
+                test_Case_Stratergy_1.Sell_Trades_From_Logic_Two_Red_Histo_Candles();
+//                test_Case_Stratergy_2.Sell_Trades_From_Positive_Supertrend_Of_Sell_Trades();
+//                test_Case_Stratergy_3.Sell_Trades_From_Negative_Supertrend_Of_Sell_Trades();
+//                test_Case_Stratergy_4.Sell_Trades_From_Negative_Supertrend_Of_Buy_Trades();
 
                 // To ensure for loop starts at the next multiple of 5 minutes 25 seconds,
                 // such as 9:25:05, even if the program is started at 9:23:00

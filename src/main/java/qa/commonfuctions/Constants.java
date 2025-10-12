@@ -18,6 +18,13 @@ public class Constants {
     public static final String WEBPAGE_WATCHLIST = "WATCHLIST";
     public static final String WEBPAGE_ALERT = "ALERT";
 
+    // <editor-fold desc="SubTabDetails New Statergy">
+    public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_A = "ST1_Cndt 1 - Part A _ 5 min of 2 Red Histo Candle with Increasing Sma of Histo";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_B = "ST1_Cndt 1 - Part B _Sell Breakout Along with Condition";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION = "ST1_Cndt 2 - Sell Side Breakout of 2 Red Histo Candle with Increasing Sma of Histo";
+
+    // </editor-fold>
+
     // <editor-fold desc="SubTabDetails">
     public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION = "Scan_For_*BUY*_Trades_+Ve_Supertrend";
     public static final String TAB_WATCHLISTPAGE_NAME_ST_1_Cndt_2_Watchlist = "1_Buy_Side_Stocks_For_Intraday_From_Positive_Supertrend_Of_Buy_Trades";
@@ -44,7 +51,11 @@ public class Constants {
 
     //Text File related details
     public static final String DATA_FOLDER_PATH = System.getProperty("user.dir") + "/src/main/resources/data/";
-    public static String TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES = "ST1_Cndt2_Watchlist_Updates.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A = "ST1_Cndt2_Watchlist_Updates_From_Cndt_1_Part_A.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B = "ST1_Cndt2_Watchlist_Updates_From_Cndt_1_Part_B.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES = "ST1_Cndt3_Watchlist_Updates.txt";
+
+
     public static String TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES = "ST2_Cndt2_Watchlist_Updates.txt";
     public static String TEXTFILE_PATH_ST3_CNDT2_WATCHLIST_UPDATES = "ST3_Cndt2_Watchlist_Updates.txt";
     public static String TEXTFILE_PATH_ST4_CNDT2_WATCHLIST_UPDATES = "ST4_Cndt2_Watchlist_Updates.txt";
@@ -89,7 +100,13 @@ public class Constants {
 
     // <editor-fold desc="ST1_CNDT1 variables ">
     // Setting up date for 1st default date time comparison
-    public static String ST1_CONDITION_1 = "ST1_Cndt_1";
+    public static String ST1_CONDITION_1_PART_A = "ST1_Cndt_1_Part_A";
+    public static String ST1_CONDITION_1_PART_B = "ST1_Cndt_1_Part_B";
+    public static String ST1_CONDITION_2 = "ST1_Cndt_2";
+
+    public static String ST1_CNDT_1_TIME = "ST1_Cndt_1_Time_";
+
+    public static String ST1_CONDITION_1 = "ST2_Cndt_1";
     public static String ST2_CONDITION_1 = "ST2_Cndt_1";
     public static String ST3_CONDITION_1 = "ST3_Cndt_1";
     public static String ST4_CONDITION_1 = "ST4_Cndt_1";
@@ -138,7 +155,7 @@ public class Constants {
 
     // </editor-fold>
 
-    public static String TEXTFILE_PATH_FOR_ST2_CNDT2_WATCHLISTS_NAME_AND_URL = System.getProperty("user.dir") + "/src/main/resources/data/ST2_Cndt2_Watchlist_Names_Ignored_for_now.properties";
+    public static String TEXTFILE_PATH_FOR_ST2_CNDT2_WATCHLISTS_NAME_AND_URL = System.getProperty("user.dir") + "/src/main/resources/data/ST1_Watchlist_Names.properties";
 
     public static String TEXTFILE_PATH_FOR_F_AND_O_STOCKS_DETAILS = System.getProperty("user.dir") + "/src/main/resources/data/FAndO_Stocks_Detail.properties";
 

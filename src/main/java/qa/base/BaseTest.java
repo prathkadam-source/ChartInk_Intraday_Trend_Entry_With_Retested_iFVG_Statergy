@@ -108,7 +108,7 @@ public class BaseTest {
         this.browser_Refresh();
 
         //Set watchlist data for statergy ST1_Cndt2
-        RunTimeDataStore.ST2_Cndt2_Watchlists_Details.update_All_Watchlist_Data(Constants.TEXTFILE_PATH_FOR_ST2_CNDT2_WATCHLISTS_NAME_AND_URL);
+        RunTimeDataStore.ST1_Watchlists_Details.update_All_Watchlist_Data(Constants.TEXTFILE_PATH_FOR_ST1_WATCHLISTS_NAME_AND_URL);
 
         //Set F_AND_O_STOCKS_DETAILS data as complete name and symbol
 //        RunTimeDataStore.ST2_Cndt2_Watchlists_Details.update_All_Watchlist_Data(Constants.TEXTFILE_PATH_FOR_F_AND_O_STOCKS_DETAILS);

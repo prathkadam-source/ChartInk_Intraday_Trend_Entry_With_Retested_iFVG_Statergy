@@ -17,6 +17,7 @@ public class AlertPage extends BaseTest {
     public static final By WebElement_Copy_Button = By.xpath("//*[contains(text(),'Copy')]");
 
     public static final By WebElement_PopUp_Ok_Button = By.xpath("//*[@role='dialog']//*[contains(text(),'Ok')]");
+    public static final By WebElement_Text_NoTriggersForThisAlertYet = By.xpath( "//*[contains(text(),'No triggers for this alert yet')]");
 
 //    By emailLoginField = By.id("email");
 //    By chartInkWebpage = By.xpath("//*[@href='https://chartink.com/']");
@@ -33,6 +34,12 @@ public class AlertPage extends BaseTest {
 
     public boolean isElement_Copy_Button_Visible() {
         return helper.isElementVisible(WebElement_Copy_Button);
+    }
+
+    public boolean isText_Message_NoTriggersForThisAlertYet_Visible() {
+        //  return helper.isElementVisible(WebElement_NoDataAvailableInTable_Message);
+        //to avoid implicit wait
+        return helper.safeFindElement(WebElement_Text_NoTriggersForThisAlertYet,0);
     }
 
     public void click_On_Copy_Button() throws InterruptedException {
@@ -60,7 +67,7 @@ public class AlertPage extends BaseTest {
 
             newTabsSetUp.navigateToTab(TabNameToNavigate);
 
-            if (this.isElement_Copy_Button_Visible()) {
+            if (!this.isText_Message_NoTriggersForThisAlertYet_Visible()) {
 
                 //Click on Copy button
                 this.click_On_Copy_Button();

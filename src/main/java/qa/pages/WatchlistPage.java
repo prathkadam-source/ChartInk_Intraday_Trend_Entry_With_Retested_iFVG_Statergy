@@ -99,13 +99,14 @@ public class WatchlistPage extends BaseTest {
         helper.sendKeysSafe(WebElement_Stock_Search_Textbox,stock_Name);
     }
 
-    public String get_Watchlist_Url_For_ST2_CNDT2_Statergy(String latest_Alert_TimeStamp) {
+    public String get_Watchlist_Url(String Statergy_Time, String latest_Alert_TimeStamp) {
 
-        ReportUtil.report(true, "INFO", "-- Function -- Starting -- get_WatchlistName_For_ST2_CNDT2_Statergy function ", "");
+        ReportUtil.report(true, "INFO", "-- Function -- Starting -- get_Watchlist_Url function ", "");
 
         String Alert_TimeStamp = latest_Alert_TimeStamp.split(", ")[1];
         String Watchlist_Name = "";
         String Watchlist_Url = "";
+        String Watchlist_Details = "";
         String updatedTimeStr = "";
 
         try {
@@ -133,11 +134,13 @@ public class WatchlistPage extends BaseTest {
             }
 
             // To create watchlist Name string searching string for hash map
-            Watchlist_Name = "ST2_Cndt_2_Time_" +updatedTimeStr ;
+            Watchlist_Name = Statergy_Time +updatedTimeStr ;
 
             // Get actual watchlist name
-            Watchlist_Url = RunTimeDataStore.ST2_Cndt2_Watchlists_Details.valueBasedOnParticularKeyText(Watchlist_Name);
-            Watchlist_Url = prop.getProperty("ST2_Cndt_2_Watchlist_Url") + Watchlist_Url;
+            Watchlist_Url = RunTimeDataStore.ST1_Watchlists_Details.valueBasedOnParticularKeyText(Watchlist_Name);
+            Watchlist_Url = prop.getProperty("Watchlist_Defaut_Url") + Watchlist_Url;
+
+            Watchlist_Details = Watchlist_Name + "," + Watchlist_Url;
 
             //Updating NAME and Url for future use
 //            Constants.ST2_CNDT2_CURRENT_RUN_WATCHLIST_NAME = Watchlist_Name;
@@ -145,14 +148,69 @@ public class WatchlistPage extends BaseTest {
 
         }catch (Exception e) {
 
-            System.out.println("get_WatchlistName_For_ST2_CNDT2_Statergy: " + e.getMessage());
-            ReportUtil.report( false, "FAIL", "get_WatchlistName_For_ST2_CNDT2_Statergy, ",  e.getMessage());
+            System.out.println("Watchlist_Details: " + e.getMessage());
+            ReportUtil.report( false, "FAIL", "get_Watchlist_Url, ",  e.getMessage());
         }
 
-        ReportUtil.report(true, "INFO", "-- Function -- Ending -- get_WatchlistName_For_ST2_CNDT2_Statergy function ", "");
+        ReportUtil.report(true, "INFO", "-- Function -- Ending -- get_Watchlist_Url function ", "");
 
-        return Watchlist_Url;
+        return Watchlist_Details;
     }
+
+//    public String get_Watchlist_Url_For_ST2_CNDT2_Statergy(String latest_Alert_TimeStamp) {
+//
+//        ReportUtil.report(true, "INFO", "-- Function -- Starting -- get_WatchlistName_For_ST2_CNDT2_Statergy function ", "");
+//
+//        String Alert_TimeStamp = latest_Alert_TimeStamp.split(", ")[1];
+//        String Watchlist_Name = "";
+//        String Watchlist_Url = "";
+//        String updatedTimeStr = "";
+//
+//        try {
+//
+//            // Append zero before hour ,if hour is single digit
+//            String alert_Hour = Alert_TimeStamp.split(":")[0];
+//            if (alert_Hour.length()== 1) {
+//                Alert_TimeStamp = Alert_TimeStamp.replace(alert_Hour + ":", "0" + alert_Hour + ":" );
+//            }
+//
+//            // To subtract 5 mins from time
+//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a", Locale.ENGLISH);
+//            LocalTime time = LocalTime.parse(Alert_TimeStamp, formatter);
+//
+//            // Subtract 5 minutes
+//            LocalTime updatedTime = time.minusMinutes(5);
+//
+//            // Convert back to string
+//            updatedTimeStr = updatedTime.format(formatter);
+//            updatedTimeStr = updatedTimeStr.trim().replace(":", "_").replace(" ", "_");
+//
+//            //code to remove leading 0 from sting so watchlist name 'ST1_Cndt_1_Time_3_05_PM' can be created properly
+//            if (updatedTimeStr.startsWith("0")) {
+//                updatedTimeStr = updatedTimeStr.substring(1);
+//            }
+//
+//            // To create watchlist Name string searching string for hash map
+//            Watchlist_Name = "ST2_Cndt_2_Time_" +updatedTimeStr ;
+//
+//            // Get actual watchlist name
+//            Watchlist_Url = RunTimeDataStore.ST1_Watchlists_Details.valueBasedOnParticularKeyText(Watchlist_Name);
+//            Watchlist_Url = prop.getProperty("ST2_Cndt_2_Watchlist_Url") + Watchlist_Url;
+//
+//            //Updating NAME and Url for future use
+////            Constants.ST2_CNDT2_CURRENT_RUN_WATCHLIST_NAME = Watchlist_Name;
+////            Constants.ST2_CNDT2_CURRENT_RUN_WATCHLIST_URL = Watchlist_Url;
+//
+//        }catch (Exception e) {
+//
+//            System.out.println("get_WatchlistName_For_ST2_CNDT2_Statergy: " + e.getMessage());
+//            ReportUtil.report( false, "FAIL", "get_WatchlistName_For_ST2_CNDT2_Statergy, ",  e.getMessage());
+//        }
+//
+//        ReportUtil.report(true, "INFO", "-- Function -- Ending -- get_WatchlistName_For_ST2_CNDT2_Statergy function ", "");
+//
+//        return Watchlist_Url;
+//    }
 
     public boolean navigate_to_Particular_Watchlist(String Tab_Name, String Watchlist_Url, String Watchlist_Name){
 
