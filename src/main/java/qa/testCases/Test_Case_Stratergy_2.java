@@ -39,6 +39,8 @@ public class Test_Case_Stratergy_2 extends BaseTest {
 
             Step_3_Checking_ST2_CONDITION_2_Alerts();
 
+            Step_4_Checking_ST2_CONDITION_2_A_Alerts();
+
         }catch (InterruptedException e) {
 
             System.out.println("Test case 2_Buy_Trades_From_Logic_Two_Green_Histo_Candles: " + e.getMessage());
@@ -61,8 +63,12 @@ public class Test_Case_Stratergy_2 extends BaseTest {
         String Current_Watchlist_Name = "";
         String Current_Watchlist_Url = "";
 
-        String ST2_Cndt3_Watchlist_Name = prop.getProperty("ST2_Cndt_3_Watchlist_Name");
-        String ST2_Cndt_3_Watchlist_Url = prop.getProperty("ST2_Cndt_3_Watchlist_Url");
+//        String ST2_Cndt3_Watchlist_Name = prop.getProperty("ST2_Cndt_3_Watchlist_Name");
+//        String ST2_Cndt_3_Watchlist_Url = prop.getProperty("ST2_Cndt_3_Watchlist_Url");
+
+        String ST2_Cndt_2_A_Watchlist_Name = prop.getProperty("ST2_Cndt_2_A_Watchlist_Page_Name");
+        String ST2_Cndt_2_A_Watchlist_Url = prop.getProperty("ST2_Cndt_2_A_Watchlist_Page_Url");
+
         // </editor-fold>
 
         try {
@@ -104,14 +110,15 @@ public class Test_Case_Stratergy_2 extends BaseTest {
 
 
                 // <editor-fold desc=" Step 1 - Sub 2">
-                ReportUtil.report(true, "INFO", "Step 1 - sub 2-- Adding stocks from alert ST2_CONDITION_1_PART_B to ST2_Cndt3 watchlist ", "");
+                ReportUtil.report(true, "INFO", "Step 1 - sub 2-- Adding stocks from alert ST2_CONDITION_1_PART_A, B and ST2_CONDITION_2" +
+                        "to ST2_Cndt_2_A watchlist ", "");
 
                 watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-                        ST2_Cndt3_Watchlist_Name, ST2_Cndt_3_Watchlist_Url, stocks);
+                        ST2_Cndt_2_A_Watchlist_Name, ST2_Cndt_2_A_Watchlist_Url, stocks);
 
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES,
-                        Constants.ACTION_STOCKS_ADDED, ST2_Cndt3_Watchlist_Name,
-                        ST2_Cndt_3_Watchlist_Url, Alerts_Stock_Names);
+                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST2_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2,
+                        Constants.ACTION_STOCKS_ADDED, ST2_Cndt_2_A_Watchlist_Name,
+                        ST2_Cndt_2_A_Watchlist_Url, Alerts_Stock_Names);
 
                 // </editor-fold>
             }
@@ -202,8 +209,11 @@ public class Test_Case_Stratergy_2 extends BaseTest {
         String Alerts_Stock_Names = "";
         String latest_Alert_TimeStamp = "";
 
-        String ST2_Cndt3_Watchlist_Name = prop.getProperty("ST2_Cndt_3_Watchlist_Name");
-        String ST2_Cndt_3_Watchlist_Url = prop.getProperty("ST2_Cndt_3_Watchlist_Url");
+//        String ST2_Cndt3_Watchlist_Name = prop.getProperty("ST2_Cndt_3_Watchlist_Name");
+//        String ST2_Cndt_3_Watchlist_Url = prop.getProperty("ST2_Cndt_3_Watchlist_Url");
+
+        String ST2_Cndt_2_A_Watchlist_Name = prop.getProperty("ST2_Cndt_2_A_Watchlist_Page_Name");
+        String ST2_Cndt_2_A_Watchlist_Url = prop.getProperty("ST2_Cndt_2_A_Watchlist_Page_Url");
         // </editor-fold>
 
         try {
@@ -221,7 +231,61 @@ public class Test_Case_Stratergy_2 extends BaseTest {
 
                 // <editor-fold desc=" Step 1 - Sub 1">
 
-                ReportUtil.report(true, "INFO", "Step 3 - Sub 1-- Adding stocks from alert ST2_CONDITION_2 to ST1_Cndt3 watchlist ", "");
+                ReportUtil.report(true, "INFO", "Step 3 - Sub 1-- Adding stocks from alert ST2_CONDITION_2 to ST1_Cndt2_A watchlist ", "");
+                //Add Stocks to watchlist
+                if (Alerts_Stock_Names.contains(",")) {
+                    stocks = Alerts_Stock_Names.split(",");
+                } else {
+                    stocks = new String[]{Alerts_Stock_Names};
+                }
+
+                watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
+                        ST2_Cndt_2_A_Watchlist_Name, ST2_Cndt_2_A_Watchlist_Url, stocks);
+
+                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST2_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2,
+                        Constants.ACTION_STOCKS_ADDED, ST2_Cndt_2_A_Watchlist_Name,
+                        ST2_Cndt_2_A_Watchlist_Url, Alerts_Stock_Names);
+
+                // </editor-fold>
+            }
+
+        } catch (IOException e) {
+
+            System.out.println("Step 3 Checking_ST2_CONDITION_2_Alerts: " + e.getMessage());
+            ReportUtil.report(false, "FAIL", "Step 3 Checking_ST2_CONDITION_2_Alerts, ", e.getMessage());
+        }
+
+        ReportUtil.report(true, "INFO", "-- Step 3 -- Ending -- Checking_ST2_CONDITION_2_Alerts", "");
+    }
+
+    public void Step_4_Checking_ST2_CONDITION_2_A_Alerts() throws InterruptedException {
+
+        ReportUtil.report(true, "INFO", "-- Step 3 -- Starting -- Checking_ST2_CONDITION_2_A_Alerts", "");
+
+        // <editor-fold desc="Variables">
+        String Alerts_Stock_Names = "";
+        String latest_Alert_TimeStamp = "";
+
+        String ST2_Cndt3_Watchlist_Name = prop.getProperty("ST2_Cndt_3_Watchlist_Name");
+        String ST2_Cndt_3_Watchlist_Url = prop.getProperty("ST2_Cndt_3_Watchlist_Url");
+        // </editor-fold>
+
+        try {
+
+            // If new alert displayed for strategy : ST2_CONDITION_1_PART_B then add it to watchlist of strategy : ST2_Cndt2 and ST1_Cndt3
+            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_1,
+                    Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION_PART_A)) {
+
+                Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
+                latest_Alert_TimeStamp = Constants.LATEST_ALERT_TIMESTAMP;
+                String[] stocks;
+
+                // Update Stock Alert to textfile
+                FileAndFolderFunctions.Overwrite_To_Text_File(Constants.TEXTFILE_PATH_FOR_RUNTIME_STOCKS_FOR_WATCHLIST, Alerts_Stock_Names);
+
+                // <editor-fold desc=" Step 1 - Sub 1">
+
+                ReportUtil.report(true, "INFO", "Step 3 - Sub 1-- Adding stocks from alert ST2_CONDITION_2_A to ST1_Cndt3 watchlist ", "");
                 //Add Stocks to watchlist
                 if (Alerts_Stock_Names.contains(",")) {
                     stocks = Alerts_Stock_Names.split(",");

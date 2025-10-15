@@ -65,6 +65,9 @@ public class Sub_Test_Case extends BaseTest {
             Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B = FileAndFolderFunctions.Create_A_TextFile(
                     Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B);
 
+            Constants.TEXTFILE_PATH_ST2_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2 = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2);
+
             Constants.TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
                     Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES);
             //----------------------------------------
