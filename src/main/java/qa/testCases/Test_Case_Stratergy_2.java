@@ -74,7 +74,7 @@ public class Test_Case_Stratergy_2 extends BaseTest {
         try {
 
             // If new alert displayed for strategy : ST2_CONDITION_1_PART_B then add it to watchlist of strategy : ST2_Cndt2 and ST2_Cndt3
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_1,
+            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_1_PART_B_Step_1,
                     Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_B)) {
 
                 Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
@@ -151,7 +151,7 @@ public class Test_Case_Stratergy_2 extends BaseTest {
             // <editor-fold desc="STEP 2 - Checking_ST2_CONDITION_1_PART_A_Alerts">
 
             // If new alert displayed for strategy : ST2_CONDITION_1_PART_A then add it to watchlist of strategy : ST2_Cndt2
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_1,
+            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_1_PART_A_Step_2,
                     Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_A)) {
 
                 Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
@@ -219,7 +219,7 @@ public class Test_Case_Stratergy_2 extends BaseTest {
         try {
 
             // If new alert displayed for strategy : ST2_CONDITION_1_PART_B then add it to watchlist of strategy : ST2_Cndt2 and ST1_Cndt3
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_1,
+            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_2_Step_3,
                     Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION)) {
 
                 Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
@@ -273,7 +273,7 @@ public class Test_Case_Stratergy_2 extends BaseTest {
         try {
 
             // If new alert displayed for strategy : ST2_CONDITION_1_PART_B then add it to watchlist of strategy : ST2_Cndt2 and ST1_Cndt3
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_1,
+            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST2_CONDITION_2_Part_A_Step_4,
                     Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION_PART_A)) {
 
                 Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
