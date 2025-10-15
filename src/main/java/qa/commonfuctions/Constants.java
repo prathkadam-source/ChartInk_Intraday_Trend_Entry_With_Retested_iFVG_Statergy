@@ -118,12 +118,28 @@ public class Constants {
     public static String ST1_CNDT_1_TIME = "ST1_Cndt_1_Time_";
     public static String ST2_CNDT_2_TIME = "ST2_Cndt_2_Time_";
 
-    public static String ST1_CONDITION_1 = "ST1_Cndt_1";
-    public static String ST2_CONDITION_1 = "ST2_Cndt_1";
+    public static String ST1_CONDITION_1_PART_B_Step_1 = "ST1_Cndt_1_Part_B_Step_1";
+    public static String ST1_CONDITION_1_PART_A_Step_2 = "ST1_Cndt_1_Part_A_Step_2";
+    public static String ST1_CONDITION_2_Step_3 = "ST1_Cndt_2_Step_3";
+    public static String ST1_CONDITION_2_Part_A_Step_4= "ST1_Cndt_2_Part_A_Step_4";
+
+    public static String ST2_CONDITION_1_PART_B_Step_1 = "ST2_Cndt_1_Part_B_Step_1";
+    public static String ST2_CONDITION_1_PART_A_Step_2 = "ST2_Cndt_1_Part_A_Step_2";
+    public static String ST2_CONDITION_2_Step_3 = "ST2_Cndt_2_Step_3";
+    public static String ST2_CONDITION_2_Part_A_Step_4= "ST2_Cndt_2_Part_A_Step_4";
+
     public static String ST3_CONDITION_1 = "ST3_Cndt_1";
     public static String ST4_CONDITION_1 = "ST4_Cndt_1";
-    public static String ST1_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
-    public static String ST2_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
+
+    public static String ST1_Cndt_1_B_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
+    public static String ST1_Cndt_1_A_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
+    public static String ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
+    public static String ST1_Cndt_2_A_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
+
+    public static String ST2_Cndt_1_B_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
+    public static String ST2_Cndt_1_A_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
+    public static String ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
+    public static String ST2_Cndt_2_A_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";  public static String ST2_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
     public static String ST3_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
     public static String ST4_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
 
