@@ -22,6 +22,7 @@ public class Constants {
     public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_A = "ST1_Cndt 1 - Part A _ 5 min of 2 Red Histo Candle with Increasing Sma of Histo";
     public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_B = "ST1_Cndt 1 - Part B _Sell Breakout Along with Condition";
     public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION = "ST1_Cndt 2 - Sell Side Breakout of 2 Red Histo Candle with Increasing Sma of Histo";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION_PART_A = "ST1_Cndt 2_A_SMA Histo upward Circle formation";
 
     public static final String TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_A = "ST2_Cndt 1 _ Part_A_5 min of 2 Green Histo Candles with Decreasing Sma of Histo";
     public static final String TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_B = "ST2_Cndt 1 _ Part_B_Continuous Buy Breakout";
@@ -58,6 +59,7 @@ public class Constants {
     public static final String DATA_FOLDER_PATH = System.getProperty("user.dir") + "/src/main/resources/data/";
     public static String TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A = "ST1_Cndt2_Watchlist_Updates_From_Cndt_1_Part_A.txt";
     public static String TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B = "ST1_Cndt2_Watchlist_Updates_From_Cndt_1_Part_B.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2 = "ST2_Cndt2_A_Watchlist_Updates_From_Cndt_1_AND_2.txt";
     public static String TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES = "ST1_Cndt3_Watchlist_Updates.txt";
     public static String TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A = "ST2_Cndt2_Watchlist_Updates_From_Cndt_1_Part_A.txt";
     public static String TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B = "ST2_Cndt2_Watchlist_Updates_From_Cndt_1_Part_B.txt";

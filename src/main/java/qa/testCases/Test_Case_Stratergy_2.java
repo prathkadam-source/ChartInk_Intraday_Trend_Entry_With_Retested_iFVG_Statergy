@@ -260,7 +260,7 @@ public class Test_Case_Stratergy_2 extends BaseTest {
 
     public void Step_4_Checking_ST2_CONDITION_2_A_Alerts() throws InterruptedException {
 
-        ReportUtil.report(true, "INFO", "-- Step 3 -- Starting -- Checking_ST2_CONDITION_2_A_Alerts", "");
+        ReportUtil.report(true, "INFO", "-- Step 4 -- Starting -- Checking_ST2_CONDITION_2_A_Alerts", "");
 
         // <editor-fold desc="Variables">
         String Alerts_Stock_Names = "";
@@ -285,7 +285,7 @@ public class Test_Case_Stratergy_2 extends BaseTest {
 
                 // <editor-fold desc=" Step 1 - Sub 1">
 
-                ReportUtil.report(true, "INFO", "Step 3 - Sub 1-- Adding stocks from alert ST2_CONDITION_2_A to ST1_Cndt3 watchlist ", "");
+                ReportUtil.report(true, "INFO", "Step 4 - Sub 1-- Adding stocks from alert ST2_CONDITION_2_A to ST1_Cndt3 watchlist ", "");
                 //Add Stocks to watchlist
                 if (Alerts_Stock_Names.contains(",")) {
                     stocks = Alerts_Stock_Names.split(",");
@@ -305,11 +305,11 @@ public class Test_Case_Stratergy_2 extends BaseTest {
 
         } catch (IOException e) {
 
-            System.out.println("Step 3 Checking_ST2_CONDITION_2_Alerts: " + e.getMessage());
-            ReportUtil.report(false, "FAIL", "Step 3 Checking_ST2_CONDITION_2_Alerts, ", e.getMessage());
+            System.out.println("Step 4 Checking_ST2_CONDITION_2_A_Alerts: " + e.getMessage());
+            ReportUtil.report(false, "FAIL", "Step 4 Checking_ST2_CONDITION_2_A_Alerts, ", e.getMessage());
         }
 
-        ReportUtil.report(true, "INFO", "-- Step 3 -- Ending -- Checking_ST2_CONDITION_2_Alerts", "");
+        ReportUtil.report(true, "INFO", "-- Step 4 -- Ending -- Checking_ST2_CONDITION_2_A_Alerts", "");
     }
 
 }
