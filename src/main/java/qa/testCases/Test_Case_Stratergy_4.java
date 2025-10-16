@@ -41,7 +41,7 @@ public class Test_Case_Stratergy_4 extends BaseTest {
 
                 // If new alert displayed for strategy : ST4_Cndt1 then add it to watchlist of strategy : ST4_Cndt2
                 if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST4_CONDITION_1,
-                        Constants.TAB_ALERTPAGE_NAME_ST_4_FIRST_CONDITION)) {
+                        Constants.TAB_ALERTPAGE_NAME_ST_4_FIRST_CONDITION,false)) {
 
                     Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
                     latest_Alert_TimeStamp = Constants.LATEST_ALERT_TIMESTAMP;

@@ -13,6 +13,9 @@ public class AlertPage extends BaseTest {
 
     SeleniumHelper helper;
     NewTabsSetUp newTabsSetUp = new NewTabsSetUp();
+
+    ArrayFunctions arrayFunctions = new ArrayFunctions();
+
     public static final By WebElement_Alert_Name_Link = By.xpath("//*[contains(text(),'Trigger')]");
     public static final By WebElement_Copy_Button = By.xpath("//*[contains(text(),'Copy')]");
 
@@ -53,7 +56,7 @@ public class AlertPage extends BaseTest {
         Thread.sleep(2000);
     }
 
-    public boolean verify_And_Get_Latest_Alert_Displayed_For_Strategies(String TextMessage , String TabNameToNavigate) throws InterruptedException {
+    public boolean verify_And_Get_Latest_Alert_Displayed_For_Strategies(String TextMessage , String TabNameToNavigate, Boolean GetUniqueStockList ) throws InterruptedException {
 
         ReportUtil.report( true, "INFO", "-- Function -- Starting -- verify_And_Get_Latest_Alert_Displayed_For_Strategies function",  "");
 
@@ -78,8 +81,7 @@ public class AlertPage extends BaseTest {
 
                 //Read the Textfile for stock Alerts
                 alerts_Stock_Data = FileAndFolderFunctions.read_Text_File(Constants.TEXTFILE_PATH_FOR_COPY_PASTED_ALERTS_OUTPUT, 2);
-                latest_Alert_TimeStamp = this.get_Latest_Alert_TimeStamp(alerts_Stock_Data);
-                latest_Alert_Stock_Names = this.get_Latest_Alert_Stock_Names(alerts_Stock_Data);
+                latest_Alert_TimeStamp = this.get_Latest_Alert_TimeStamp(alerts_Stock_Data,1,true);
 
                 if (TextMessage.contains(Constants.ST1_CONDITION_1_PART_B_Step_1)){                       /// ST 1 Starts
                     default_Alert_Time_Stamp = Constants.ST1_Cndt_1_B_DEFAULT_ALERT_TIMESTAMP;
@@ -126,6 +128,13 @@ public class AlertPage extends BaseTest {
                         Constants.ST3_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
                     }
 
+                    if (GetUniqueStockList) {
+                        // This function will get unique stocks name compared with current and previous timestamp alert
+                        latest_Alert_Stock_Names = this.get_Unique_Stock_Names_From_Latest_Alert_TimeStamp(alerts_Stock_Data);
+                    }else {
+                        latest_Alert_Stock_Names = this.get_Latest_Alert_Stock_Names(alerts_Stock_Data, 1);
+                    }
+
                     Constants.LATEST_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
                     Constants.LATEST_ALERT_STOCK_NAMES= latest_Alert_Stock_Names ;
 
@@ -152,7 +161,47 @@ public class AlertPage extends BaseTest {
         return new_Alert_Displayed;
     }
 
-    public String get_Latest_Alert_TimeStamp(String Stock_Data) throws InterruptedException {
+    public String get_Unique_Stock_Names_From_Latest_Alert_TimeStamp(String alerts_Stock_Data) throws InterruptedException {
+
+        ReportUtil.report( true, "INFO", "-- Function -- Starting -- get_Unique_Stock_Names_From_Latest_Alert_TimeStamp function",  "");
+
+        String latest_Alert_Stock_Names = "";
+        String Previuos_Alert_Stock_Names = "";
+        String latest_Alert_TimeStamp = "";
+        String Previuos_Alert_TimeStamp = "";
+
+        try {
+
+            latest_Alert_Stock_Names = this.get_Latest_Alert_Stock_Names(alerts_Stock_Data,1);
+            Previuos_Alert_Stock_Names = this.get_Latest_Alert_Stock_Names(alerts_Stock_Data,2);
+
+            latest_Alert_TimeStamp = this.get_Latest_Alert_TimeStamp(alerts_Stock_Data,1, true);
+            Previuos_Alert_TimeStamp = this.get_Latest_Alert_TimeStamp(alerts_Stock_Data, 2, true);
+
+            // Compare two days and return true if both are of same day like €Day1 = Mon, Day 2 = Mon
+            if (latest_Alert_TimeStamp.substring(0, 3).equals(Previuos_Alert_TimeStamp.substring(0, 3))){
+
+                // Validate further if both current and previous alerts contains more than one stock in list
+                if (latest_Alert_Stock_Names.contains(",") && Previuos_Alert_Stock_Names.contains(",")){
+
+                    String[] UniqueStocksArray = arrayFunctions.getUniqueArrayFromSetOfTwoArrays(latest_Alert_Stock_Names,Previuos_Alert_Stock_Names);
+                    latest_Alert_Stock_Names = String.join(", ", UniqueStocksArray);
+                }
+            }
+
+            ReportUtil.report( true, "INFO", "Latest alert Stock_Names :, ",  latest_Alert_Stock_Names);
+
+        }catch (Exception e) {
+
+            System.out.println("get_Unique_Stock_Names_From_Latest_Alert_TimeStamp: " + e.getMessage());
+            ReportUtil.report( false, "FAIL", "get_Unique_Stock_Names_From_Latest_Alert_TimeStamp, ",  e.getMessage());
+        }
+        ReportUtil.report( true, "INFO", "-- Function -- Ending -- get_Unique_Stock_Names_From_Latest_Alert_TimeStamp function",  "");
+
+        return latest_Alert_Stock_Names;
+    }
+
+    public String get_Latest_Alert_TimeStamp(String Stock_Data, int RowNum, Boolean ReplaceCommaInDate) throws InterruptedException {
 
         ReportUtil.report( true, "INFO", "-- Function -- Starting -- Get_Latest_Alert_TimeStamp function",  "");
 
@@ -166,9 +215,13 @@ public class AlertPage extends BaseTest {
             String[] lines = Stock_Data.split("\\n");
 
             // Example Output: Tue Jul 8 2025, 1:05
-            String[] date_parts = lines[1].split("(?i)\\s*(AM|PM)\\s*");
+            String[] date_parts = lines[RowNum].split("(?i)\\s*(AM|PM)\\s*");
 
-            final_Date = date_parts[0].replaceFirst(",", "").replaceFirst(",", "");
+            if (ReplaceCommaInDate) {
+                final_Date = date_parts[0].replaceFirst(",", "").replaceFirst(",", "");
+            }else {
+                final_Date = date_parts[0];
+            }
 
             //To construct final date
             if (lines[1].contains(" AM")){
@@ -193,7 +246,7 @@ public class AlertPage extends BaseTest {
         return final_Date;
     }
 
-    public String get_Latest_Alert_Stock_Names(String Stock_Data) throws InterruptedException {
+    public String get_Latest_Alert_Stock_Names(String Stock_Data, int RowNum) throws InterruptedException {
 
         ReportUtil.report( true, "INFO", "-- Function -- Starting -- get_Latest_Alert_Stock_Names function",  "");
 
@@ -206,7 +259,7 @@ public class AlertPage extends BaseTest {
             String[] lines = Stock_Data.split("\\n");
 
             // Example Output: HINDUNILVR, KALYANKJIL
-            String[] parts = lines[1].split("\\t");
+            String[] parts = lines[RowNum].split("\\t");
             final_Stocks = parts[2];
 
             System.out.println("Latest alert stock names : "+ final_Stocks);

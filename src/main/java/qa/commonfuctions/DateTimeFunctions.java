@@ -2,11 +2,13 @@ package qa.commonfuctions;
 
 import qa.utils.ReportUtil;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.Locale;
 
 public class DateTimeFunctions {
@@ -43,7 +45,8 @@ public class DateTimeFunctions {
             } else if (dateTime1.isBefore(dateTime2)) {
                 System.out.println("dateTime1 is before dateTime2");
                 ReportUtil.report(true, "INFO", "dateTime1 is before dateTime2 : ", "dateTime1 :" + dateTime1 + " ,dateTime2: " + dateTime2);
-               //status = true;
+//                ReportUtil.report(true, "FAIL", "dateTime1 is before dateTime2 is Failed: ", "dateTime1 :" + dateTime1 + " ,dateTime2: " + dateTime2);
+//               status = true;
             }
 
         } catch (Exception e) {
@@ -56,6 +59,8 @@ public class DateTimeFunctions {
 
         return status;
     }
+
+
 
     // Output Example: "Tue Jul 8 2025"
     public static String get_Now_Date_And_Day_In_Chartink_Time_Format() {
