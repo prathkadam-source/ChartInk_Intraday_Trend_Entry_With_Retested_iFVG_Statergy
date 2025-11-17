@@ -83,26 +83,14 @@ public class AlertPage extends BaseTest {
                 alerts_Stock_Data = FileAndFolderFunctions.read_Text_File(Constants.TEXTFILE_PATH_FOR_COPY_PASTED_ALERTS_OUTPUT, 2);
                 latest_Alert_TimeStamp = this.get_Latest_Alert_TimeStamp(alerts_Stock_Data,1,true);
 
-                if (TextMessage.contains(Constants.ST1_CONDITION_1_PART_B_Step_1)){                       /// ST 1 Starts
-                    default_Alert_Time_Stamp = Constants.ST1_Cndt_1_B_DEFAULT_ALERT_TIMESTAMP;
-                }else if(TextMessage.contains(Constants.ST1_CONDITION_1_PART_A_Step_2)){
-                    default_Alert_Time_Stamp = Constants.ST1_Cndt_1_A_DEFAULT_ALERT_TIMESTAMP;
-                }else if(TextMessage.contains(Constants.ST1_CONDITION_1_PART_C_Step_5)) {
-                    default_Alert_Time_Stamp = Constants.ST1_Cndt_1_C_DEFAULT_ALERT_TIMESTAMP;
-                }else if(TextMessage.contains(Constants.ST1_CONDITION_2_Step_3)){
-                    default_Alert_Time_Stamp = Constants.ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP;
-                }else if(TextMessage.contains(Constants.ST1_CONDITION_2_Part_A_Step_4)){
-                    default_Alert_Time_Stamp = Constants.ST1_Cndt_2_A_DEFAULT_ALERT_TIMESTAMP;               /// ST 1 ends
-                }else if(TextMessage.contains(Constants.ST2_CONDITION_1_PART_B_Step_1)){                       /// ST 2 Starts
-                    default_Alert_Time_Stamp = Constants.ST2_Cndt_1_B_DEFAULT_ALERT_TIMESTAMP;
-                }else if(TextMessage.contains(Constants.ST2_CONDITION_1_PART_A_Step_2)){
-                    default_Alert_Time_Stamp = Constants.ST2_Cndt_1_A_DEFAULT_ALERT_TIMESTAMP;
-                }else if(TextMessage.contains(Constants.ST2_CONDITION_1_PART_C_Step_5)) {
-                    default_Alert_Time_Stamp = Constants.ST2_Cndt_1_C_DEFAULT_ALERT_TIMESTAMP;
-                }else if(TextMessage.contains(Constants.ST2_CONDITION_2_Step_3)){
-                    default_Alert_Time_Stamp = Constants.ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP;
-                }else if(TextMessage.contains(Constants.ST2_CONDITION_2_Part_A_Step_4)){
-                    default_Alert_Time_Stamp = Constants.ST2_Cndt_2_A_DEFAULT_ALERT_TIMESTAMP;   /// ST 2 Ends
+                if (TextMessage.contains(Constants.ST1_CONDITION_1_Step_1)){                       /// ST 1 Starts
+                    default_Alert_Time_Stamp = Constants.ST1_Cndt_1_DEFAULT_ALERT_TIMESTAMP;
+                }else if(TextMessage.contains(Constants.ST1_CONDITION_2_Step_2)){
+                    default_Alert_Time_Stamp = Constants.ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP;       /// ST 1 ends
+                }else if(TextMessage.contains(Constants.ST2_CONDITION_1_Step_1)){                       /// ST 2 Starts
+                    default_Alert_Time_Stamp = Constants.ST2_Cndt_1_DEFAULT_ALERT_TIMESTAMP;
+                }else if(TextMessage.contains(Constants.ST2_CONDITION_2_Step_2)){
+                    default_Alert_Time_Stamp = Constants.ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP;        /// ST 2 Ends
                 }else if(TextMessage.contains(Constants.ST3_CONDITION_1)){
                     default_Alert_Time_Stamp = Constants.ST3_DEFAULT_ALERT_TIMESTAMP;
                 }
@@ -112,26 +100,14 @@ public class AlertPage extends BaseTest {
                     new_Alert_Displayed = true;
 
                     //updating details as gloabl constant
-                    if (TextMessage.contains(Constants.ST1_CONDITION_1_PART_B_Step_1)){                       /// ST 1 Starts
-                        Constants.ST1_Cndt_1_B_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
-                    }else if(TextMessage.contains(Constants.ST1_CONDITION_1_PART_A_Step_2)){
-                        Constants.ST1_Cndt_1_A_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
-                    }else if(TextMessage.contains(Constants.ST1_CONDITION_1_PART_C_Step_5)){
-                        Constants.ST1_Cndt_1_C_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
-                    }else if(TextMessage.contains(Constants.ST1_CONDITION_2_Step_3)) {
-                        Constants.ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
-                    }else if(TextMessage.contains(Constants.ST1_CONDITION_2_Part_A_Step_4)){
-                        Constants.ST1_Cndt_2_A_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;                /// ST 1 ends
-                    }else if(TextMessage.contains(Constants.ST2_CONDITION_1_PART_B_Step_1)) {                      /// ST 2 Starts
-                        Constants.ST2_Cndt_1_B_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
-                    }else if(TextMessage.contains(Constants.ST2_CONDITION_1_PART_A_Step_2)){
-                        Constants.ST2_Cndt_1_A_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
-                    }else if(TextMessage.contains(Constants.ST2_CONDITION_1_PART_C_Step_5)) {
-                        Constants.ST2_Cndt_1_C_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
-                    }else if(TextMessage.contains(Constants.ST2_CONDITION_2_Step_3)) {
-                        Constants.ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
-                    }else if(TextMessage.contains(Constants.ST2_CONDITION_2_Part_A_Step_4)){
-                        Constants.ST2_Cndt_2_A_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;          /// ST 2 Ends
+                    if (TextMessage.contains(Constants.ST1_CONDITION_1_Step_1)){                       /// ST 1 Starts
+                        Constants.ST1_Cndt_1_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
+                    }else if(TextMessage.contains(Constants.ST1_CONDITION_2_Step_2)){
+                        Constants.ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;          /// ST 1 ends
+                    }else if(TextMessage.contains(Constants.ST2_CONDITION_1_Step_1)) {                      /// ST 2 Starts
+                        Constants.ST2_Cndt_1_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
+                    }else if(TextMessage.contains(Constants.ST2_CONDITION_2_Step_2)) {
+                        Constants.ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;     /// ST 2 Ends
                     }else if(TextMessage.contains(Constants.ST3_CONDITION_1)) {
                         Constants.ST3_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
                     }

@@ -27,35 +27,29 @@ public class Test_Case_Stratergy_1 extends BaseTest {
     WatchlistPage watchlistPage = new WatchlistPage();
 
     // Sell_Trades_From_Logic_Two_Red_Histo_Candles with increasing SMA of Histo , where candle is closed above Supertrend
-    public void Sell_Trades_From_Logic_Two_Red_Histo_Candles() {
+    public void Sell_Trades_From_Logic_ADX_Buy_Breakout_With_Sell_Position() {
 
-        ReportUtil.report( true, "INFO", "-- Test case 1 -- Starting -- Sell_Trades_From_Logic_Two_Red_Histo_Candles",  "");
+        ReportUtil.report( true, "INFO", "-- Test case 1 -- Starting -- Sell_Trades_From_Logic_ADX_Buy_Breakout_With_Sell_Position",  "");
 
         try {
 
-            Step_1_Checking_ST1_CONDITION_1_PART_B_Alerts();
+            Step_1_Checking_ST1_CONDITION_1_Alerts();
 
-            Step_2_Checking_ST1_CONDITION_1_PART_A_Alerts();
-
-            Step_3_Checking_ST1_CONDITION_2_Alerts();
-
-            Step_4_Checking_ST1_CONDITION_2_A_Alerts();
-
-            Step_5_Checking_ST1_CONDITION_1_C_With_ADX_Filter_Alerts();
+            Step_2_Checking_ST1_CONDITION_2_Alerts();
 
              }catch (InterruptedException e) {
 
-            System.out.println("Test case 1_Sell_Trades_From_Logic_Two_Red_Histo_Candles: " + e.getMessage());
-            ReportUtil.report( false, "FAIL", "Test case 1 Sell_Trades_From_Logic_Two_Red_Histo_Candles, ",  e.getMessage());
+            System.out.println("Test case 1_Sell_Trades_From_Logic_Sell_Trades_From_Logic_ADX_Buy_Breakout_With_Sell_Position: " + e.getMessage());
+            ReportUtil.report( false, "FAIL", "Test case 1 Sell_Trades_From_Logic_Sell_Trades_From_Logic_ADX_Buy_Breakout_With_Sell_Position, ",  e.getMessage());
         }
 
-        ReportUtil.report( true, "INFO", "-- Test case 1 -- Ending -- Sell_Trades_From_Logic_Two_Red_Histo_Candles",  "");
+        ReportUtil.report( true, "INFO", "-- Test case 1 -- Ending -- Sell_Trades_From_Logic_Sell_Trades_From_Logic_ADX_Buy_Breakout_With_Sell_Position",  "");
 
     }
 
-    public void Step_1_Checking_ST1_CONDITION_1_PART_B_Alerts() throws InterruptedException {
+    public void Step_1_Checking_ST1_CONDITION_1_Alerts() throws InterruptedException {
 
-        ReportUtil.report(true, "INFO", "-- Step 1 -- Starting -- Checking_ST1_CONDITION_1_PART_B_Alerts", "");
+        ReportUtil.report(true, "INFO", "-- Step 1 -- Starting -- Checking_ST1_CONDITION_1_Alerts", "");
 
         // <editor-fold desc="Variables">
             String Alerts_Stock_Names = "";
@@ -70,15 +64,13 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 //            String ST1_Cndt3_Watchlist_Name = prop.getProperty("ST1_Cndt_3_Watchlist_Name");
 //            String ST1_Cndt_3_Watchlist_Url = prop.getProperty("ST1_Cndt_3_Watchlist_Url");
 
-            String ST1_Cndt_2_A_Watchlist_Name = prop.getProperty("ST1_Cndt_2_A_Watchlist_Name");
-            String ST1_Cndt_2_A_Watchlist_Url = prop.getProperty("ST1_Cndt_2_A_Watchlist_Url");
         // </editor-fold>
 
         try {
 
-            // If new alert displayed for strategy : ST1_CONDITION_1_PART_B then add it to watchlist of strategy : ST1_Cndt2 and ST1_Cndt3
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_1_PART_B_Step_1,
-                    Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_B, false)) {
+            // If new alert displayed for strategy : ST1_CONDITION_1 then add it to watchlist of strategy : ST1_Cndt2
+            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_1_Step_1,
+                    Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION, false)) {
 
                 Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
                 latest_Alert_TimeStamp = Constants.LATEST_ALERT_TIMESTAMP;
@@ -89,7 +81,7 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
                 // <editor-fold desc=" Step 1 - Sub 1">
 
-                ReportUtil.report(true, "INFO", "Step 1 - Sub 1-- Adding stocks from alert ST1_CONDITION_1_PART_B to ST1_Cndt2 watchlist ", "");
+                ReportUtil.report(true, "INFO", "Step 1 - Sub 1-- Adding stocks from alert to ST1_Cndt2 watchlist ", "");
                 //Add Stocks to watchlist
                 if (Alerts_Stock_Names.contains(",")) {
                     stocks = Alerts_Stock_Names.split(",");
@@ -101,180 +93,32 @@ public class Test_Case_Stratergy_1 extends BaseTest {
                 Current_Watchlist_Name = Current_Watchlist_Details.split(",")[0];
                 Current_Watchlist_Url = Current_Watchlist_Details.split(",")[1];
 
-                // add Stocks from "ST1_CONDITION_1_PART_B" to watchlist of ST1_Cndt2
+                // add Stocks from "ST1_CONDITION_1" to watchlist of ST1_Cndt2
                 watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
                         Current_Watchlist_Name, Current_Watchlist_Url, stocks);
 
                 // Update Stock Alerts to  output textfile for end of the day validation
-                Comments = Constants.ST1_CONDITION_1_PART_B_Step_1 + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
+                Comments = Constants.ST1_CONDITION_1_Step_1 + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
 
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B,
+                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1,
                                 Comments, Current_Watchlist_Name,
                         Current_Watchlist_Url, Alerts_Stock_Names);
                 // </editor-fold>
 
-
-                // <editor-fold desc=" Step 1 - Sub 2">
-                ReportUtil.report(true, "INFO", "Step 1 - sub 2-- Adding stocks from alert ST1_CONDITION_1 and 2" +
-                        " to ST1_Cndt 2_A watchlist ", "");
-
-                watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-                        ST1_Cndt_2_A_Watchlist_Name, ST1_Cndt_2_A_Watchlist_Url, stocks);
-
-                Comments = Constants.ST1_CONDITION_1_PART_B_Step_1 + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2,
-                        Comments, ST1_Cndt_2_A_Watchlist_Name,
-                        ST1_Cndt_2_A_Watchlist_Url, Alerts_Stock_Names);
-
-                // </editor-fold>
             }
 
         } catch (IOException e) {
 
-            System.out.println("Step 1 Checking_ST1_CONDITION_1_PART_B_Alerts: " + e.getMessage());
-            ReportUtil.report(false, "FAIL", "Step 1 Checking_ST1_CONDITION_1_PART_B_Alerts, ", e.getMessage());
+            System.out.println("Step 1 Checking_ST1_CONDITION_1_Alerts: " + e.getMessage());
+            ReportUtil.report(false, "FAIL", "Step 1 Checking_ST1_CONDITION_1_Alerts, ", e.getMessage());
         }
 
-        ReportUtil.report(true, "INFO", "-- Step 1 -- Ending -- Checking_ST1_CONDITION_1_PART_B_Alerts", "");
+        ReportUtil.report(true, "INFO", "-- Step 1 -- Ending -- Checking_ST1_CONDITION_1_Alerts", "");
     }
 
-    public void Step_2_Checking_ST1_CONDITION_1_PART_A_Alerts() throws InterruptedException {
+    public void Step_2_Checking_ST1_CONDITION_2_Alerts() throws InterruptedException {
 
-        ReportUtil.report( true, "INFO", "-- Step 2 -- Starting -- Checking_ST1_CONDITION_1_PART_A_Alerts",  "");
-
-        // <editor-fold desc="Variables">
-        String Alerts_Stock_Names = "";
-        String latest_Alert_TimeStamp = "";
-
-        String Current_Watchlist_Details = "";
-        String Current_Watchlist_Name = "";
-        String Current_Watchlist_Url = "";
-
-        String Comments = "";
-
-        // </editor-fold>
-
-        try {
-
-            // <editor-fold desc="STEP 2 - Checking_ST1_CONDITION_1_PART_A_Alerts">
-
-            // If new alert displayed for strategy : ST1_CONDITION_1_PART_A then add it to watchlist of strategy : ST1_Cndt2
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_1_PART_A_Step_2,
-                    Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_A, false)) {
-
-                Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
-                latest_Alert_TimeStamp = Constants.LATEST_ALERT_TIMESTAMP;
-                String[] stocks;
-
-                // Condition 2
-                // Update Stock Alert to textfile
-                FileAndFolderFunctions.Overwrite_To_Text_File(Constants.TEXTFILE_PATH_FOR_RUNTIME_STOCKS_FOR_WATCHLIST, Alerts_Stock_Names);
-
-                // TODO : Write a logic to remove stocks already altered in ST1_CONDITION_1_PART_B
-
-                //Add Stocks to watchlist
-                //Alerts_Stock_Names = "360ONE,ABB,ADANIENSOL,ADANIENT,ADANIGREEN,ADANIPORTS,ATGL,ABCAPITAL,ABFRL,ALKEM,AMBER,AMBUJACEM,ANGELONE,APLAPOLLO,APOLLOHOSP,ASHOKLEY,ASIANPAINT,ASTRAL,AUROPHARMA,DMART,AXISBANK,BAJAJ-AUTO,BAJFINANCE,BAJAJFINSV,BANDHANBNK,BANKBARODA,BANKINDIA,BDL,BEL,BHARATFORG,BHEL,BPCL,BHARTIARTL,BIOCON,BLUESTARCO,BOSCHLTD,BRITANNIA,BSE,CANBK,CDSL,CESC,CGPOWER,CHOLAFIN,CIPLA,COALINDIA,COFORGE,COLPAL,CAMS,CONCOR,CROMPTON,CUMMINSIND,CYIENT,DABUR,DALBHARAT,DELHIVERY,DIVISLAB,DIXON,DLF,DRREDDY,EICHERMOT,ETERNAL,EXIDEIND,FORTIS,NYKAA,GAIL,GLENMARK,GMRAIRPORT,GODREJCP,GODREJPROP,GRANULES,GRASIM,HAVELLS,HCLTECH,HDFCAMC,HDFCBANK,HDFCLIFE,HEROMOTOCO,HFCL,HINDALCO,HAL,HINDPETRO,HINDUNILVR,HINDZINC,HUDCO,ICICIBANK,ICICIGI,ICICIPRULI,IDEA,IDFCFIRSTB,IIFL,INDIANB,IEX,IOC,IRCTC,IRFC,IREDA,IGL,INDUSINDBK,INDUSTOWER,NAUKRI,INFY,INOXWIND,INDIGO,IRB,ITC,JSL,JINDALSTEL,JIOFIN,JSWENERGY,JSWSTEEL,JUBLFOOD,KALYANKJIL,KAYNES,KEI,KFINTECH,KOTAKBANK,KPITTECH,LT,LAURUSLABS,LICHSGFIN,LICI,LTF,LTIM,LUPIN,LODHA,M&M,MANAPPURAM,MANKIND,MARICO,MARUTI,MFSL,MAXHEALTH,MAZDOCK,MOTHERSON,MPHASIS,MCX,MUTHOOTFIN,NATIONALUM,NBCC,NCC,NESTLEIND,NHPC,NMDC,NTPC,NUVAMA,OBEROIRLTY,OIL,ONGC,PAYTM,OFSS,PAGEIND,PATANJALI,POLICYBZR,PERSISTENT,PETRONET,PGEL,PIDILITIND,PIIND,PPLPHARMA,PNBHOUSING,POLYCAB,POONAWALLA,PFC,POWERGRID,PRESTIGE,PNB,RVNL,RBLBANK,RELIANCE,RECLTD,SBICARD,SBILIFE,SHREECEM,SHRIRAMFIN,SIEMENS,SJVN,SOLARINDS,SONACOMS,SRF,SBIN,SAIL,SUNPHARMA,SUPREMEIND,SUZLON,SYNGENE,TATACHEM,TCS,TATACONSUM,TATAELXSI,TATAMOTORS,TATAPOWER,TATASTEEL,TATATECH,TECHM,FEDERALBNK,INDHOTEL,PHOENIXLTD,TITAGARH,TITAN,TORNTPHARM,TORNTPOWER,TRENT,TIINDIA,TVSMOTOR,ULTRACEMCO,UNIONBANK,UNITDSPR,UNOMINDA,UPL,VBL,VEDL,VOLTAS,WIPRO,YESBANK,ZYDUSLIFE";
-//                    Alerts_Stock_Names = "IRFC,IREDA,IGL,INDUSINDBK,INDUSTOWER,NAUKRI,INFY,INOXWIND,INDIGO,IRB,ITC,JSL,JINDALSTEL,JIOFIN,JSWENERGY,JSWSTEEL,JUBLFOOD,KALYANKJIL,KAYNES,KEI,KFINTECH,KOTAKBANK,KPITTECH,LT,LAURUSLABS,LICHSGFIN,LICI,LTF,LTIM,LUPIN,LODHA,M&M,MANAPPURAM,MANKIND,MARICO,MARUTI,MFSL,MAXHEALTH,MAZDOCK,MOTHERSON,MPHASIS,MCX,MUTHOOTFIN,NATIONALUM,NBCC,NCC,NESTLEIND,NHPC,NMDC,NTPC,NUVAMA,OBEROIRLTY,OIL,ONGC,PAYTM,OFSS,PAGEIND,PATANJALI,POLICYBZR,PERSISTENT,PETRONET,PGEL,PIDILITIND,PIIND,PPLPHARMA,PNBHOUSING,POLYCAB,POONAWALLA,PFC,POWERGRID,PRESTIGE,PNB,RVNL,RBLBANK,RELIANCE,RECLTD,SBICARD,SBILIFE,SHREECEM,SHRIRAMFIN,SIEMENS,SJVN,SOLARINDS,SONACOMS,SRF,SBIN,SAIL,SUNPHARMA,SUPREMEIND,SUZLON,SYNGENE,TATACHEM,TCS,TATACONSUM,TATAELXSI,TATAMOTORS,TATAPOWER,TATASTEEL,TATATECH,TECHM,FEDERALBNK,INDHOTEL,PHOENIXLTD,TITAGARH,TITAN,TORNTPHARM,TORNTPOWER,TRENT,TIINDIA,TVSMOTOR,ULTRACEMCO,UNIONBANK,UNITDSPR,UNOMINDA,UPL,VBL,VEDL,VOLTAS,WIPRO,YESBANK,ZYDUSLIFE";
-                // Create an array to pass to delete_Stock_From_Watchlist function
-                if (Alerts_Stock_Names.contains(",")) {
-                    stocks = Alerts_Stock_Names.split(",");
-                }else {
-                    stocks = new String[]{Alerts_Stock_Names};
-                }
-//
-                Current_Watchlist_Details =  watchlistPage.get_Watchlist_Url(Constants.ST1_CNDT_1_TIME, latest_Alert_TimeStamp);
-                Current_Watchlist_Name = Current_Watchlist_Details.split(",")[0];
-                Current_Watchlist_Url = Current_Watchlist_Details.split(",")[1];
-
-                // add Stocks from "ST1_Cndt_1_" to watchlist of ST1_Cndt2
-                watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-                        Current_Watchlist_Name,Current_Watchlist_Url,stocks);
-//
-//                    //Upload Stocks text file
-//                    watchlistPage.upload_Stock_List_TextFile_Using_Robot(Constants.TEXTFILE_PATH_FOR_RUNTIME_STOCKS_FOR_WATCHLIST);
-
-                // Update Stock Alerts to  output textfile for end of the day validation
-
-                Comments = Constants.ST1_CONDITION_1_PART_A_Step_2 + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A,
-                        Comments, Current_Watchlist_Name,
-                        Current_Watchlist_Url, Alerts_Stock_Names);
-
-            }
-            // </editor-fold>
-
-        }catch (IOException e) {
-
-            System.out.println("Step_2_Checking_ST1_CONDITION_1_PART_A_Alerts: " + e.getMessage());
-            ReportUtil.report( false, "FAIL", "Step_2_Checking_ST1_CONDITION_1_PART_A_Alerts, ",  e.getMessage());
-        }
-
-        ReportUtil.report( true, "INFO", "-- Step 2 -- Ending -- Step_2_Checking_ST1_CONDITION_1_PART_A_Alert",  "");
-
-    }
-
-    public void Step_3_Checking_ST1_CONDITION_2_Alerts() throws InterruptedException {
-
-        ReportUtil.report(true, "INFO", "-- Step 3 -- Starting -- Checking_ST1_CONDITION_2_Alerts", "");
-
-        // <editor-fold desc="Variables">
-        String Alerts_Stock_Names = "";
-        String latest_Alert_TimeStamp = "";
-        String Comments = "";
-
-//        String ST1_Cndt3_Watchlist_Name = prop.getProperty("ST1_Cndt_3_Watchlist_Name");
-//        String ST1_Cndt_3_Watchlist_Url = prop.getProperty("ST1_Cndt_3_Watchlist_Url");
-
-        String ST1_Cndt_2_A_Watchlist_Name = prop.getProperty("ST1_Cndt_2_A_Watchlist_Name");
-        String ST1_Cndt_2_A_Watchlist_Url = prop.getProperty("ST1_Cndt_2_A_Watchlist_Url");
-        // </editor-fold>
-
-        try {
-
-            // If new alert displayed for strategy : ST1_CONDITION_1_PART_B then add it to watchlist of strategy : ST1_Cndt2 and ST1_Cndt3
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_2_Step_3,
-                    Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION, true)) {
-
-                Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
-                latest_Alert_TimeStamp = Constants.LATEST_ALERT_TIMESTAMP;
-                String[] stocks;
-
-                // Update Stock Alert to textfile
-                FileAndFolderFunctions.Overwrite_To_Text_File(Constants.TEXTFILE_PATH_FOR_RUNTIME_STOCKS_FOR_WATCHLIST, Alerts_Stock_Names);
-
-                // <editor-fold desc=" Step 1 - Sub 1">
-
-                ReportUtil.report(true, "INFO", "Step 3 - Sub 1-- Adding stocks from alert ST1_CONDITION_2 to ST1_Cndt 2_A watchlist ", "");
-                //Add Stocks to watchlist
-                if (Alerts_Stock_Names.contains(",")) {
-                    stocks = Alerts_Stock_Names.split(",");
-                } else {
-                    stocks = new String[]{Alerts_Stock_Names};
-                }
-
-                watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-                        ST1_Cndt_2_A_Watchlist_Name, ST1_Cndt_2_A_Watchlist_Url, stocks);
-
-                Comments = Constants.ST1_CONDITION_2_Step_3 + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2,
-                        Comments, ST1_Cndt_2_A_Watchlist_Url,
-                        ST1_Cndt_2_A_Watchlist_Name, Alerts_Stock_Names);
-
-                // </editor-fold>
-            }
-
-        } catch (IOException e) {
-
-            System.out.println("Step 3 Checking_ST1_CONDITION_2_Alerts: " + e.getMessage());
-            ReportUtil.report(false, "FAIL", "Step 3 Checking_ST1_CONDITION_2_Alerts, ", e.getMessage());
-        }
-
-        ReportUtil.report(true, "INFO", "-- Step 3 -- Ending -- Checking_ST1_CONDITION_2_Alerts", "");
-    }
-
-    public void Step_4_Checking_ST1_CONDITION_2_A_Alerts() throws InterruptedException {
-
-        ReportUtil.report(true, "INFO", "-- Step 4 -- Starting -- Checking_ST1_CONDITION_2_A_Alerts", "");
+        ReportUtil.report(true, "INFO", "-- Step  -- Starting -- Checking_ST1_CONDITION_2_Alerts", "");
 
         // <editor-fold desc="Variables">
         String Alerts_Stock_Names = "";
@@ -288,9 +132,9 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
         try {
 
-            // If new alert displayed for strategy : ST1_CONDITION_1_PART_B then add it to watchlist of strategy : ST1_Cndt2 and ST1_Cndt3
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_2_Part_A_Step_4,
-                    Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION_PART_A, true)) {
+            // If new alert displayed for strategy : ST1_CONDITION_2 then add it to watchlist of strategy : ST1_Cndt3
+            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_2_Step_2,
+                    Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION, true)) {
 
                 Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
                 latest_Alert_TimeStamp = Constants.LATEST_ALERT_TIMESTAMP;
@@ -301,7 +145,7 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
                 // <editor-fold desc=" Step 1 - Sub 1">
 
-                ReportUtil.report(true, "INFO", "Step 4 - Sub 1-- Adding stocks from alert ST1_CONDITION_2_A to ST1_Cndt 3 watchlist ", "");
+                ReportUtil.report(true, "INFO", "Step 3 - Sub 1-- Adding stocks from alert ST1_CONDITION_2 to ST1_Cndt 3 watchlist ", "");
                 //Add Stocks to watchlist
                 if (Alerts_Stock_Names.contains(",")) {
                     stocks = Alerts_Stock_Names.split(",");
@@ -312,79 +156,21 @@ public class Test_Case_Stratergy_1 extends BaseTest {
                 watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
                         ST1_Cndt3_Watchlist_Name, ST1_Cndt_3_Watchlist_Url, stocks);
 
-                Comments = Constants.ST1_CONDITION_2_Part_A_Step_4 + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
+                Comments = Constants.ST1_CONDITION_2_Step_2 + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
                 FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES,
-                        Comments, ST1_Cndt_3_Watchlist_Url,
-                        ST1_Cndt3_Watchlist_Name, Alerts_Stock_Names);
+                        Comments, ST1_Cndt3_Watchlist_Name,
+                        ST1_Cndt_3_Watchlist_Url, Alerts_Stock_Names);
 
                 // </editor-fold>
             }
 
         } catch (IOException e) {
 
-            System.out.println("Step 4 Checking_ST1_CONDITION_2_A_Alerts: " + e.getMessage());
-            ReportUtil.report(false, "FAIL", "Step 4 Checking_ST1_CONDITION_2_A_Alerts, ", e.getMessage());
+            System.out.println("Step 3 Checking_ST1_CONDITION_2_Alerts: " + e.getMessage());
+            ReportUtil.report(false, "FAIL", "Step 3 Checking_ST1_CONDITION_2_Alerts, ", e.getMessage());
         }
 
-        ReportUtil.report(true, "INFO", "-- Step 4 -- Ending -- Checking_ST1_CONDITION_2_A_Alerts", "");
+        ReportUtil.report(true, "INFO", "-- Step 3 -- Ending -- Checking_ST1_CONDITION_2_Alerts", "");
     }
 
-    public void Step_5_Checking_ST1_CONDITION_1_C_With_ADX_Filter_Alerts() throws InterruptedException {
-
-        ReportUtil.report( true, "INFO", "-- Step 5 -- Starting -- ST1_CONDITION_1_C_With_ADX_Filter_Alerts",  "");
-
-        // <editor-fold desc="Variables">
-        String Alerts_Stock_Names = "";
-        String latest_Alert_TimeStamp = "";
-        String Comments = "";
-
-        String ST1_Cndt3_Part_C_Watchlist_Name = prop.getProperty("ST1_Cndt_3_Part_C_Watchlist_Name");
-        String ST1_Cndt_3_Part_C_Watchlist_Url = prop.getProperty("ST1_Cndt_3_Part_C_Watchlist_Url");
-        // </editor-fold>
-
-        try {
-
-            // <editor-fold desc="STEP 2 - Checking_ST1_CONDITION_1_C_Alerts">
-
-            // If new alert displayed for strategy : ST1_CONDITION_1_C then add it to watchlist of strategy : ST1_Cndt3_Part_C
-            if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_1_PART_C_Step_5,
-                    Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_C,false)) {
-
-                Alerts_Stock_Names = Constants.LATEST_ALERT_STOCK_NAMES;
-                latest_Alert_TimeStamp = Constants.LATEST_ALERT_TIMESTAMP;
-                String[] stocks;
-
-                // Condition 2
-                // Update Stock Alert to textfile
-                FileAndFolderFunctions.Overwrite_To_Text_File(Constants.TEXTFILE_PATH_FOR_RUNTIME_STOCKS_FOR_WATCHLIST, Alerts_Stock_Names);
-
-                //Add Stocks to watchlist
-
-                if (Alerts_Stock_Names.contains(",")) {
-                    stocks = Alerts_Stock_Names.split(",");
-                }else {
-                    stocks = new String[]{Alerts_Stock_Names};
-                }
-
-                watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-                        ST1_Cndt3_Part_C_Watchlist_Name, ST1_Cndt_3_Part_C_Watchlist_Url, stocks);
-
-                // Update Stock Alerts to  output textfile for end of the day validation
-                Comments = Constants.ST1_CONDITION_1_PART_C_Step_5 + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_C,
-                        Comments, ST1_Cndt3_Part_C_Watchlist_Name,
-                        ST1_Cndt_3_Part_C_Watchlist_Url, Alerts_Stock_Names);
-
-            }
-            // </editor-fold>
-
-        }catch (IOException e) {
-
-            System.out.println("Step_5_Checking_ST1_CONDITION_1_C_With_ADX_Filter_Alerts: " + e.getMessage());
-            ReportUtil.report( false, "FAIL", "Step_5_Checking_ST1_CONDITION_1_C_With_ADX_Filter_Alerts, ",  e.getMessage());
-        }
-
-        ReportUtil.report( true, "INFO", "-- Step 2 -- Ending -- Step_5_Checking_ST1_CONDITION_1_C_With_ADX_Filter_Alerts",  "");
-
-    }
 }

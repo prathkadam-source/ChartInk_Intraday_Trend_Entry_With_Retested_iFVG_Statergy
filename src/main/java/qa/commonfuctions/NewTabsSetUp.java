@@ -141,18 +141,12 @@ public class NewTabsSetUp extends BaseTest {
 
         try {
             switch (tabName) {
-                case Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_A:
+                //ST1
+                case Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
                     browser_Refresh();
                     Thread.sleep(1000);
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_A );
-                    break;
-
-                case Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_B:
-                    this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    browser_Refresh();
-                    Thread.sleep(1000);
-                    this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Watchlist_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_B);
+                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION );
                     break;
 
                 case Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION:
@@ -161,33 +155,12 @@ public class NewTabsSetUp extends BaseTest {
                     Thread.sleep(1000);
                     this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION );
                     break;
-
-                case Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION_PART_A:
+                //ST2
+                case Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
                     browser_Refresh();
                     Thread.sleep(1000);
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION_PART_A );
-                    break;
-
-                case Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_C:
-                    this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    browser_Refresh();
-                    Thread.sleep(1000);
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_C );
-                    break;
-
-                case Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_A:
-                    this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    browser_Refresh();
-                    Thread.sleep(1000);
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_A );
-                    break;
-
-                case Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_B:
-                    this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    browser_Refresh();
-                    Thread.sleep(1000);
-                    this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Watchlist_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_B);
+                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION );
                     break;
 
                 case Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION:
@@ -197,20 +170,7 @@ public class NewTabsSetUp extends BaseTest {
                     this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION );
                     break;
 
-                case Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION_PART_A:
-                    this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    browser_Refresh();
-                    Thread.sleep(1000);
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION_PART_A );
-                    break;
-
-                case Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_C:
-                    this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
-                    browser_Refresh();
-                    Thread.sleep(1000);
-                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_C );
-                    break;
-
+                //Default Watchlist tab
                 case Constants.TAB_DEFAULT_WATCHLIST_PAGE:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
                     browser_Refresh();
@@ -250,59 +210,33 @@ public class NewTabsSetUp extends BaseTest {
             this.getTabsCount();
 
             this.switchToTab(1);
-            this.setUrl(prop.getProperty("ST1_Cndt1_Part_A_Alert_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_A);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_A,"1");
+            this.setUrl(prop.getProperty("Dashboard_Watchlist_Page_Url"));
+            this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Selected_Watchlist_SubTab, "");
+            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_DEFAULT_WATCHLIST_PAGE,"1");
+
+            //ST 1
 
             this.switchToTab(2);
-            this.setUrl(prop.getProperty("ST1_Cndt1_Part_B_Alert_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_B);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_B,"2");
+            this.setUrl(prop.getProperty("ST1_Cndt1_Alert_Page_Url"));
+            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION);
+            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION,"2");
 
             this.switchToTab(3);
             this.setUrl(prop.getProperty("ST1_Cndt2_Alert_Page_Url"));
             this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION);
             RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION,"3");
 
+            // ST2
+
             this.switchToTab(4);
-            this.setUrl(prop.getProperty("ST1_Cndt2_A_Alert_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION_PART_A);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION_PART_A,"4");
+            this.setUrl(prop.getProperty("ST2_Cndt1_Alert_Page_Url"));
+            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION);
+            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION,"4");
 
             this.switchToTab(5);
-            this.setUrl(prop.getProperty("Dashboard_Watchlist_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_WATCHLIST, WatchlistPage.WebElement_Selected_Watchlist_SubTab, "");
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_DEFAULT_WATCHLIST_PAGE,"5");
-
-            this.switchToTab(6);
-            this.setUrl(prop.getProperty("ST2_Cndt1_Part_A_Alert_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_A);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_A,"6");
-
-            this.switchToTab(7);
-            this.setUrl(prop.getProperty("ST2_Cndt1_Part_B_Alert_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_B);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_B,"7");
-
-            this.switchToTab(8);
             this.setUrl(prop.getProperty("ST2_Cndt2_Alert_Page_Url"));
             this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION,"8");
-
-            this.switchToTab(9);
-            this.setUrl(prop.getProperty("ST2_Cndt2_A_Alert_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION_PART_A);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION_PART_A,"9");
-
-            this.switchToTab(10);
-            this.setUrl(prop.getProperty("ST2_Cndt1_Part_C_Alert_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_C);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION_PART_C,"10");
-
-            this.switchToTab(11);
-            this.setUrl(prop.getProperty("ST1_Cndt1_Part_C_Alert_Page_Url"));
-            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_C);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION_PART_C,"11");
+            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION,"5");
 
         } catch (Exception e) {
 

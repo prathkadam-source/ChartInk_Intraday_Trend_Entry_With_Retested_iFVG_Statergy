@@ -48,34 +48,16 @@ public class Sub_Test_Case extends BaseTest {
 
             // Textfile to Log updates when ST1_Cndt2-watchlists are updated for alerts received for ST1_Cndt1
             // this file is use to record the out details
-            Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A);
-
-            Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B);
-
-            Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_C = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_C);
-
-            Constants.TEXTFILE_PATH_ST1_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2 = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2);
+            Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1 = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1);
 
             Constants.TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
                     Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES);
 
             // Textfile to Log updates when ST2_Cndt2-watchlists are updated for alerts received for ST2_Cndt1
             // this file is use to record the out details
-            Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_A);
-
-            Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_B);
-
-            Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_C = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1_PART_C);
-
-            Constants.TEXTFILE_PATH_ST2_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2 = FileAndFolderFunctions.Create_A_TextFile(
-                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_PART_A_WATCHLIST_UPDATES_FROM_CNDT_1_AND_2);
+            Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1 = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1);
 
             Constants.TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
                     Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES);
@@ -132,8 +114,8 @@ public class Sub_Test_Case extends BaseTest {
                 System.out.println(Interval);
                 ReportUtil.report(true, "INFO", Interval, "");
 
-                test_Case_Stratergy_1.Sell_Trades_From_Logic_Two_Red_Histo_Candles();
-                test_Case_Stratergy_2.Buy_Trades_From_Logic_Two_Green_Histo_Candles();
+                  test_Case_Stratergy_1.Sell_Trades_From_Logic_ADX_Buy_Breakout_With_Sell_Position();
+                  test_Case_Stratergy_2.Buy_Trades_From_Logic_ADX_Sell_Breakout_With_Negative_Supertrend_For_Buy_Position();
 //                test_Case_Stratergy_3.Sell_Trades_From_Negative_Supertrend_Of_Sell_Trades();
 //                test_Case_Stratergy_4.Sell_Trades_From_Negative_Supertrend_Of_Buy_Trades();
 
