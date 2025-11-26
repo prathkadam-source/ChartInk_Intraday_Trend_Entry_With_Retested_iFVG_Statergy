@@ -19,11 +19,11 @@ public class Constants {
     public static final String WEBPAGE_ALERT = "ALERT";
 
     // <editor-fold desc="SubTabDetails New Statergy">
-    public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION = "IntraDay_Sell_ST1_Cndt_1_ADX_Buy_Breakout_With_Sell_Position";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION = "ST_1_Cndt_1_Intraday_Buy_Side_FVG_Breakout";
     public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION = "IntraDay_Sell_ST1_Cndt_2_ADX_Sell_Side_Crossover";
     public static final String TAB_ALERTPAGE_NAME_ST_1_THIRD_CONDITION = "ST1_Cndt_3_ADX_Sell_Breakout";
 
-    public static final String TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION = "IntraDay_ST2_Cndt_1_ADX_Sell_Breakout_With_-Ve_Supertrend_For_Buy_Position";
+    public static final String TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION = "ST_2_Cndt_1_Intraday_Sell_Side_FVG_Breakout";
     public static final String TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION = "IntraDay_ST2_Cndt_2_ADX_Buy_Side_Crossover";
 
     public static final String TAB_ALERTPAGE_NAME_ST_2_THIRD_CONDITION = "ST2_Cndt_3_ADX_Buy_Breakout";
@@ -61,6 +61,7 @@ public class Constants {
     public static String TEXTFILE_PATH_ST1_CNDT2_MAIN_HEADER_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST1_Cndt2_Main_Header_Watchlist_Updates_From_Cndt_1.txt";
     public static String TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES = "ST1_Cndt3_Watchlist_Updates.txt";
     public static String TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST2_Cndt2_Watchlist_Updates_From_Cndt_1.txt";
+    public static String TEXTFILE_PATH_ST2_CNDT2_MAIN_HEADER_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST2_Cndt2_Main_Header_Watchlist_Updates_From_Cndt_1.txt";
     public static String TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES = "ST2_Cndt3_Watchlist_Updates.txt";
     public static String TEXTFILE_PATH_ST3_LAST_CNDT_WATCHLIST_UPDATES = "ST3_Last_Cndt_Watchlist_Updates_From_ST2_CNDT_3.txt";
     public static String TEXTFILE_PATH_ST4_LAST_CNDT_WATCHLIST_UPDATES = "ST4_Last_Cndt_Watchlist_Updates_From_ST1_CNDT_3.txt";
