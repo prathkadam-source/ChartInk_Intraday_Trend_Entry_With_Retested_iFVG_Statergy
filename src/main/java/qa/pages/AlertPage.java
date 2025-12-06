@@ -86,11 +86,15 @@ public class AlertPage extends BaseTest {
                 if (TextMessage.contains(Constants.ST1_CONDITION_1_Step_1)){                       /// ST 1 Starts
                     default_Alert_Time_Stamp = Constants.ST1_Cndt_1_DEFAULT_ALERT_TIMESTAMP;
                 }else if(TextMessage.contains(Constants.ST1_CONDITION_2_Step_2)){
-                    default_Alert_Time_Stamp = Constants.ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP;       /// ST 1 ends
+                    default_Alert_Time_Stamp = Constants.ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP;
+                }else if(TextMessage.contains(Constants.ST1_CONDITION_2_B_Step_3)){
+                    default_Alert_Time_Stamp = Constants.ST1_Cndt_2_B_DEFAULT_ALERT_TIMESTAMP;       /// ST 1 ends
                 }else if(TextMessage.contains(Constants.ST2_CONDITION_1_Step_1)){                       /// ST 2 Starts
                     default_Alert_Time_Stamp = Constants.ST2_Cndt_1_DEFAULT_ALERT_TIMESTAMP;
                 }else if(TextMessage.contains(Constants.ST2_CONDITION_2_Step_2)){
-                    default_Alert_Time_Stamp = Constants.ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP;        /// ST 2 Ends
+                    default_Alert_Time_Stamp = Constants.ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP;
+                }else if(TextMessage.contains(Constants.ST2_CONDITION_2_B_Step_3)){
+                    default_Alert_Time_Stamp = Constants.ST2_Cndt_2_B_DEFAULT_ALERT_TIMESTAMP;        /// ST 2 Ends
                 }
 //                else if(TextMessage.contains(Constants.ST1_CONDITION_3_Step_3)){                       /// ST 4 Starts
 //                    default_Alert_Time_Stamp = Constants.ST1_Cndt_3_DEFAULT_ALERT_TIMESTAMP;         /// ST 4 Ends
@@ -106,11 +110,15 @@ public class AlertPage extends BaseTest {
                     if (TextMessage.contains(Constants.ST1_CONDITION_1_Step_1)){                       /// ST 1 Starts
                         Constants.ST1_Cndt_1_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
                     }else if(TextMessage.contains(Constants.ST1_CONDITION_2_Step_2)){
-                        Constants.ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;          /// ST 1 ends
+                        Constants.ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
+                    }else if(TextMessage.contains(Constants.ST1_CONDITION_2_B_Step_3)) {
+                        Constants.ST1_Cndt_2_B_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;          /// ST 1 ends
                     }else if(TextMessage.contains(Constants.ST2_CONDITION_1_Step_1)) {                      /// ST 2 Starts
                         Constants.ST2_Cndt_1_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
                     }else if(TextMessage.contains(Constants.ST2_CONDITION_2_Step_2)) {
-                        Constants.ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;     /// ST 2 Ends
+                        Constants.ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
+                    }else if(TextMessage.contains(Constants.ST2_CONDITION_2_B_Step_3)) {
+                        Constants.ST2_Cndt_2_B_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;     /// ST 2 Ends
                     }
 //                    else if(TextMessage.contains(Constants.ST1_CONDITION_3_Step_3)) {                  /// ST 4 Starts
 //                        Constants.ST1_Cndt_3_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;   /// ST 4 Ends

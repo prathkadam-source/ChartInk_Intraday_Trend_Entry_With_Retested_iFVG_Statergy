@@ -56,6 +56,12 @@ public class Sub_Test_Case extends BaseTest {
 
             Constants.TEXTFILE_PATH_ST1_CNDT2_PARTICULAR_TIME_FRAME_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
                     Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_PARTICULAR_TIME_FRAME_WATCHLIST_UPDATES);
+
+            Constants.TEXTFILE_PATH_ST1_CNDT2_HEADER_DEFAULT_F_AND_O_WATCHLIST_FOR_REMOVED_STOCKS_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_HEADER_DEFAULT_F_AND_O_WATCHLIST_FOR_REMOVED_STOCKS_UPDATES);
+
+            Constants.TEXTFILE_PATH_ST1_CNDT2_B_STOCK_ALERTS_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST1_CNDT2_B_STOCK_ALERTS_UPDATES);
 //
 
             // Textfile to Log updates when ST2_Cndt2-watchlists are updated for alerts received for ST2_Cndt1
@@ -65,6 +71,15 @@ public class Sub_Test_Case extends BaseTest {
 
             Constants.TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
                     Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES);
+
+            Constants.TEXTFILE_PATH_ST2_CNDT2_PARTICULAR_TIME_FRAME_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_PARTICULAR_TIME_FRAME_WATCHLIST_UPDATES);
+
+            Constants.TEXTFILE_PATH_ST2_CNDT2_HEADER_DEFAULT_F_AND_O_WATCHLIST_FOR_REMOVED_STOCKS_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_HEADER_DEFAULT_F_AND_O_WATCHLIST_FOR_REMOVED_STOCKS_UPDATES);
+
+            Constants.TEXTFILE_PATH_ST2_CNDT2_B_STOCK_ALERTS_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
+                    Constants.FOLDER_SUB_OUTPUT+ "\\", Constants.TEXTFILE_PATH_ST2_CNDT2_B_STOCK_ALERTS_UPDATES);
 //
 //            //// Textfile to Log updates when ST3_Last_Cndt-watchlists are updated for alerts received for ST2_Cndt3
 //            Constants.TEXTFILE_PATH_ST3_LAST_CNDT_WATCHLIST_UPDATES = FileAndFolderFunctions.Create_A_TextFile(
@@ -127,7 +142,7 @@ public class Sub_Test_Case extends BaseTest {
                 System.out.println(Interval);
                 ReportUtil.report(true, "INFO", Interval, "");
 
-                  test_Case_Stratergy_1.Sell_Trades_From_Logic_iFVG();
+//                  test_Case_Stratergy_1.Sell_Trades_From_Logic_iFVG();
                   test_Case_Stratergy_2.Buy_Trades_From_Logic_iFVG();
 //                test_Case_Stratergy_3.Sell_Trades_From_Negative_Supertrend_Of_Sell_Trades();
 //                test_Case_Stratergy_4.Sell_Trades_From_Negative_Supertrend_Of_Buy_Trades();

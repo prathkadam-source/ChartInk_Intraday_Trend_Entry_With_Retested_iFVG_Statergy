@@ -21,10 +21,12 @@ public class Constants {
     // <editor-fold desc="SubTabDetails New Statergy">
     public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION = "ST_1_Cndt_1_Intraday_Sell_Side_Inverse_FVG_Breakout";
     public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION = "ST_1_Cndt_2_Intraday_Sell_Side_IFVG_Statergy_Step_2_Failed_Of_Buy_FVG_Buy_Breakout";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION_PART_B = "";
     public static final String TAB_ALERTPAGE_NAME_ST_1_THIRD_CONDITION = "ST1_Cndt_3_ADX_Sell_Breakout";
 
     public static final String TAB_ALERTPAGE_NAME_ST_2_FIRST_CONDITION = "ST_2_Cndt_1_Intraday_Buy_Side_iFVG_Statergy_Step_1_FVG_Sell_Breakout";
     public static final String TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION = "ST_2_Cndt_2_Intraday_Buy_Side_iFVG_Statergy_Step_2_Failed_Of_Sell_FVG_Breakout";
+    public static final String TAB_ALERTPAGE_NAME_ST_2_SECOND_CONDITION_PART_B = "ST_2_Cndt_2_B_Intraday_Buy_Side_iFVG_Statergy_Step_3_Failed_Of_Buy_iFVG_Breakout";
 
     public static final String TAB_ALERTPAGE_NAME_ST_2_THIRD_CONDITION = "ST2_Cndt_3_ADX_Buy_Breakout";
 
@@ -61,9 +63,15 @@ public class Constants {
 //    public static String TEXTFILE_PATH_ST1_CNDT2_MAIN_HEADER_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST1_Cndt2_Main_Header_Watchlist_Updates_From_Cndt_1.txt";
     public static String TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES = "ST1_Cndt3_Watchlist_Updates.txt";
     public static String TEXTFILE_PATH_ST1_CNDT2_PARTICULAR_TIME_FRAME_WATCHLIST_UPDATES = "ST1_Cndt2_Particular_TimeFrame_Watchlist_Updates.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT2_HEADER_DEFAULT_F_AND_O_WATCHLIST_FOR_REMOVED_STOCKS_UPDATES = "ST1_Cndt2_Header_Default_F_Aand_O_Watchlist_For_Removed_Stocks_Updates.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT2_B_STOCK_ALERTS_UPDATES = "ST1_Cndt2_B_Stock_Alert_Updates.txt";
     public static String TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST2_Cndt2_Watchlist_Updates_From_Cndt_1.txt";
 //    public static String TEXTFILE_PATH_ST2_CNDT2_MAIN_HEADER_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST2_Cndt2_Main_Header_Watchlist_Updates_From_Cndt_1.txt";
     public static String TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES = "ST2_Cndt3_Watchlist_Updates.txt";
+    public static String TEXTFILE_PATH_ST2_CNDT2_PARTICULAR_TIME_FRAME_WATCHLIST_UPDATES = "ST2_Cndt2_Particular_TimeFrame_Watchlist_Updates.txt";
+    public static String TEXTFILE_PATH_ST2_CNDT2_HEADER_DEFAULT_F_AND_O_WATCHLIST_FOR_REMOVED_STOCKS_UPDATES = "ST2_Cndt2_Header_Default_F_Aand_O_Watchlist_For_Removed_Stocks_Updates.txt";
+    public static String TEXTFILE_PATH_ST2_CNDT2_B_STOCK_ALERTS_UPDATES = "ST2_Cndt2_B_Stock_Alert_Updates.txt";
+
     public static String TEXTFILE_PATH_ST3_LAST_CNDT_WATCHLIST_UPDATES = "ST3_Last_Cndt_Watchlist_Updates_From_ST2_CNDT_3.txt";
     public static String TEXTFILE_PATH_ST4_LAST_CNDT_WATCHLIST_UPDATES = "ST4_Last_Cndt_Watchlist_Updates_From_ST1_CNDT_3.txt";
 
@@ -122,10 +130,12 @@ public class Constants {
 
     public static String ST1_CONDITION_1_Step_1 = "ST1_Cndt_1_Step_1";
     public static String ST1_CONDITION_2_Step_2 = "ST1_Cndt_2_Step_2";
+    public static String ST1_CONDITION_2_B_Step_3 = "ST1_Cndt_2_B_Step_3";
     public static String ST1_CONDITION_3_Step_3 = "ST1_Cndt_3_Step_3";
 
     public static String ST2_CONDITION_1_Step_1 = "ST2_Cndt_1_Step_1";
     public static String ST2_CONDITION_2_Step_2 = "ST2_Cndt_2_Step_2";
+    public static String ST2_CONDITION_2_B_Step_3 = "ST2_Cndt_2_B_Step_3";
     public static String ST2_CONDITION_3_Step_3 = "ST2_Cndt_3_Step_3";
 
     public static String ST3_CONDITION_LAST = "ST3_Cndt_LAST";
@@ -135,12 +145,12 @@ public class Constants {
 
     public static String ST1_Cndt_1_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
     public static String ST1_Cndt_2_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
-
+    public static String ST1_Cndt_2_B_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";
     public static String ST1_Cndt_3_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
 
     public static String ST2_Cndt_1_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
     public static String ST2_Cndt_2_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
-
+    public static String ST2_Cndt_2_B_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";
     public static String ST2_Cndt_3_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
     public static String ST3_Cndt_Last_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
     public static String ST4_Cndt_Last_DEFAULT_ALERT_TIMESTAMP = DateTimeFunctions.get_Now_Date_And_Day_In_Chartink_Time_Format() + ", 09:10 AM";  // Example format: "Tue Jul 8 2025, 9:10 am";
@@ -151,6 +161,7 @@ public class Constants {
     // FOR ST1_Cndt2 watchlist Name and url of current excution
 
     public static String ACTION_STOCKS_ADDED = "Stocks added into watchlist";
+    public static String ACTION_STOCKS_REMOVED = "Stocks removed from watchlist";
 
     public static String ACTION_STOCKS_REMOVED_FOR_INVALID_CONDITION = "Stocks removed from watchlist for invalid condition";
 

@@ -38,6 +38,9 @@ public class WatchlistPage extends BaseTest {
     public static final By WebElement_PopUp_Ok_Button = By.xpath("//*[@role='dialog']//*[contains(text(),'Ok')]");
     public static final By WebElement_Search_Textbox = By.xpath("//*[@id='search']");
     public static final By WebElement_StockAddedToWatchlist_Text = By.xpath("//*[contains(text(),'Stock added to watchlist')]");
+    public static final By WebElement_Remove_Stock_Popup_Confirmation_Button = By.xpath("//*[contains(@class,'button')]//*[contains(text(),'Confirm')]");
+
+
 
     public static final String xpath_For_StockName_of_Add_Stocklist = "//*[contains (@class,'watchlist')]//*[text()=\"%s\"]";
 //    public static final String xpath_For_StockName_of_Add_Stocklist = "//*[contains (@class,'watchlist')]//*[contains(text(),\"%s\")]";
@@ -86,6 +89,11 @@ public class WatchlistPage extends BaseTest {
         helper.safeFindElement(WebElement_PopUp_Ok_Button,2);
         helper.safeClick(WebElement_PopUp_Ok_Button);
         Thread.sleep(2000);
+    }
+    public void click_On_Remove_Stock_Popup_Confirmation_Button() throws InterruptedException {
+        //helper.safeFindElement(WebElement_Remove_Stock_Popup_Confirmation_Button,2);
+        helper.safeClick(WebElement_Remove_Stock_Popup_Confirmation_Button);
+        Thread.sleep(500);
     }
     public void click_Empty_Watchlist_Button() {
         helper.safeClick(WebElement_Empty_Watchlist_Button);
@@ -382,7 +390,8 @@ public class WatchlistPage extends BaseTest {
                 Thread.sleep(500);
                 this.click_On_Stock_Remove_Link(stockFullName);
                 Thread.sleep(500);
-                browserAlertHandler.click_Ok();
+                this.click_On_Remove_Stock_Popup_Confirmation_Button();
+                //browserAlertHandler.click_Ok();
 
                 System.out.println("Stock '" + StockName + "' removed from Watchlist '" + Watchlist_Name + "' ");
                 ReportUtil.report(this.isElement_NoStocksOnWatchlist_Message_Visible(), "PASS",
@@ -425,8 +434,9 @@ public class WatchlistPage extends BaseTest {
                 }  else {
 
                     this.click_On_Stock_Remove_Link(stockFullName);
-                    Thread.sleep(1000);
-                    browserAlertHandler.click_Ok();
+                    Thread.sleep(500);
+                    this.click_On_Remove_Stock_Popup_Confirmation_Button();
+                   // browserAlertHandler.click_Ok();
 //                    Thread.sleep(1000);
 //                    browserAlertHandler.click_Ok();
                     System.out.println("Stock '" + StockName + "' removed from Watchlist '" + Watchlist_Name + "' ");

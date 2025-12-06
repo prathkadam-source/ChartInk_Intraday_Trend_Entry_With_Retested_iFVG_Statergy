@@ -33,7 +33,7 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
         try {
 
-            Step_1_Checking_ST1_CONDITION_1_Alerts();
+//            Step_1_Checking_ST1_CONDITION_1_Alerts();
 
             Step_2_Checking_ST1_CONDITION_2_Alerts();
 
@@ -131,8 +131,12 @@ public class Test_Case_Stratergy_1 extends BaseTest {
         String Current_Watchlist_Name = "";
         String Current_Watchlist_Url = "";
 
+        String ST1_Cndt_2_Header_Default_F_AND_O_Watchlist_Name = prop.getProperty("ST1_Cndt_2_Header_Default_F_AND_O_Watchlist_Name");
+        String ST1_Cndt_2_Header_Default_F_AND_O_Watchlist_Url = prop.getProperty("ST1_Cndt_2_Header_Default_F_AND_O_Watchlist_Url");
+
         String ST1_Cndt_3_Watchlist_Name = prop.getProperty("ST1_Cndt_3_Watchlist_Name");
         String ST1_Cndt_3_Watchlist_Url = prop.getProperty("ST1_Cndt_3_Watchlist_Url");
+
 
         // </editor-fold>
 
@@ -158,6 +162,24 @@ public class Test_Case_Stratergy_1 extends BaseTest {
                 } else {
                     stocks = new String[]{Alerts_Stock_Names};
                 }
+
+                // Stock removal functionality
+                // <editor-fold desc="Stock removal functionality ">
+
+                // Remove Stocks from "ST1_Cndt_2_Header_Default_F_AND_O_Watchlist" to to avoid repeated trigger for Condition 2
+                // Example BANKNIFTY in 5 min time frame triggerd at 2nd DEc 2025 1. @11.10 AM 2. @11.25 Am
+
+                watchlistPage.delete_Stock_From_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
+                        ST1_Cndt_2_Header_Default_F_AND_O_Watchlist_Name, ST1_Cndt_2_Header_Default_F_AND_O_Watchlist_Url, stocks);
+
+                // Update Stock Alerts to  output textfile for end of the day validation
+                Comments = Constants.ST1_CONDITION_2_Step_2 + System.lineSeparator() + Constants.ACTION_STOCKS_REMOVED ;
+
+                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT2_HEADER_DEFAULT_F_AND_O_WATCHLIST_FOR_REMOVED_STOCKS_UPDATES,
+                        Comments, ST1_Cndt_2_Header_Default_F_AND_O_Watchlist_Name,
+                        ST1_Cndt_2_Header_Default_F_AND_O_Watchlist_Url, Alerts_Stock_Names);
+
+                // </editor-fold>
 
                 // <editor-fold desc=" To Handle brealout candle issue of condition 2">
                 // ADDING THIS SUB CONDITION TO HANDLE BREAKOUT CANDLE ISSUE OF CONDITION 2
