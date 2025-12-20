@@ -30,6 +30,7 @@ public class Sub_Test_Case extends BaseTest {
     Test_Case_Stratergy_3 test_Case_Stratergy_3 = new Test_Case_Stratergy_3();
     Test_Case_Stratergy_4 test_Case_Stratergy_4 = new Test_Case_Stratergy_4();
     Test_Case_Stratergy_5 test_Case_Stratergy_5 = new Test_Case_Stratergy_5();
+    Test_Case_Stratergy_6 test_Case_Stratergy_6 = new Test_Case_Stratergy_6();
 
 
     public void Prerequisite_To_Login_And_Set_Sub_Tabs_Urls() throws InterruptedException {
@@ -142,11 +143,14 @@ public class Sub_Test_Case extends BaseTest {
                 System.out.println(Interval);
                 ReportUtil.report(true, "INFO", Interval, "");
 
-//                  test_Case_Stratergy_1.Sell_Trades_From_Logic_M_Pattern();
-//                  test_Case_Stratergy_2.Buy_Trades_From_Logic_W_Pattern();
+                  test_Case_Stratergy_1.Sell_Trades_From_Logic_M_Pattern();
+                  test_Case_Stratergy_2.Buy_Trades_From_Logic_W_Pattern();
+
+                  test_Case_Stratergy_5.Sell_Trades_From_Logic_Liquidity_Swipe_From_Sell_FVG();
+                  test_Case_Stratergy_6.Buy_Trades_From_Logic_Liquidity_Swipe_From_Buy_FVG();
+
 //                test_Case_Stratergy_3.Sell_Trades_From_Negative_Supertrend_Of_Sell_Trades();
 //                test_Case_Stratergy_4.Sell_Trades_From_Negative_Supertrend_Of_Buy_Trades();
-//                test_Case_Stratergy_5.Sell_Trades_From_Logic_Liquidity_Swipe_From_Sell_FVG();
 
                 // To ensure for loop starts at the next multiple of 5 minutes 25 seconds,
                 // such as 9:25:05, even if the program is started at 9:23:00

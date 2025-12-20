@@ -36,7 +36,7 @@ public class Constants {
 
     public static final String TAB_ALERTPAGE_NAME_ST_5_FIRST_CONDITION = "ST_5_Step_1_Intraday_Sell_Trade_Based_On_Liquidity_Swipe";
 
-    public static final String TAB_ALERTPAGE_NAME_ST_6_FIRST_CONDITION = "ST_6_Step_1_Intraday_Buy_Trade_Based_On_Liquidity_Swipe";
+    public static final String TAB_ALERTPAGE_NAME_ST_6_FIRST_CONDITION = "ST_6_Step_1_Intraday_Buy_Trade_Based_On_Liquidity_Swipe_From_Buy_FVG";
     // </editor-fold>
 
     // <editor-fold desc="SubTabDetails">
