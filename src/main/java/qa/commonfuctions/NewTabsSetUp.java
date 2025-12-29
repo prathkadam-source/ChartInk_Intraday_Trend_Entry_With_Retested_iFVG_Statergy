@@ -322,10 +322,10 @@ public class NewTabsSetUp extends BaseTest {
             this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FOURTH_CONDITION);
             RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FOURTH_CONDITION,"10");
 
-            this.switchToTab(10);
+            this.switchToTab(11);
             this.setUrl(prop.getProperty("ST2_Cndt5_Alert_Page_Url"));
             this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIFTH_CONDITION);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FIFTH_CONDITION,"10");
+            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FIFTH_CONDITION,"11");
 ////
             // ST5
             this.switchToTab(12);
