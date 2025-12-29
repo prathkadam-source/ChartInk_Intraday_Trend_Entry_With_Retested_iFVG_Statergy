@@ -134,7 +134,7 @@ public class AlertPage extends BaseTest {
                         Constants.ST2_Cndt_4_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;
                     }else if(TextMessage.contains(Constants.ST2_CONDITION_5_Step_5)) {
                         Constants.ST2_Cndt_5_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;     /// ST 2 Ends
-                    } else if(TextMessage.contains(Constants.ST5_CONDITION_1_Step_1)) {                  /// ST 5 Starts
+                    }else if(TextMessage.contains(Constants.ST5_CONDITION_1_Step_1)) {                  /// ST 5 Starts
                         Constants.ST5_Cndt_1_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;   /// ST 5 Ends
                     }else if(TextMessage.contains(Constants.ST6_CONDITION_1_Step_1)) {                  /// ST 6 Starts
                         Constants.ST6_Cndt_1_DEFAULT_ALERT_TIMESTAMP = latest_Alert_TimeStamp;   /// ST 6 Ends

@@ -19,11 +19,11 @@ public class Constants {
     public static final String WEBPAGE_ALERT = "ALERT";
 
     // <editor-fold desc="SubTabDetails New Statergy">
-    public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION = "ST_1_Cndt_1_Intraday_Sell_Side_M_Pattern_Statergy_Step_1_Buy_FVG_Breakout";
-    public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION = "ST_1_Cndt_2_Intraday_Sell_Side_M_Pattern_Statergy_Step_2_Price_Close_Below_Buy_FVG_And_SMA";
-    public static final String TAB_ALERTPAGE_NAME_ST_1_THIRD_CONDITION = "ST_1_Cndt_3_Intraday_Sell_Side_M_Pattern_Statergy_Step_3_Price_Close_above_Buy_FVG_And_SMA";
-    public static final String TAB_ALERTPAGE_NAME_ST_1_FOURTH_CONDITION = "ST_1_Cndt_4_Intraday_Sell_Side_M_Pattern_Statergy_Step_4_Price_Close_Below_Buy_FVG_And_SMA";
-    public static final String TAB_ALERTPAGE_NAME_ST_1_FIFTH_CONDITION = "ST_1_Cndt_5_Sell_Side_M_Pattern_Step_5_If_Price_Closed_Above_Buy_FVG_Then_Remove_Stocks";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_FIRST_CONDITION = "ST_1_Cndt_1_Intraday_Sell_Side_Retested_iFVG_Statergy_Step_1_Buy_FVG_Breakout";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION = "ST_1_Cndt_2_Intraday_Sell_Side_Retested_iFVG_Statergy_Step_2_Failed_Of_Buy_FVG";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_THIRD_CONDITION = "ST_1_Cndt_3_Sell_Side_Step_3_If_Price_Closed_Above_Buy_FVG_Then_Remove_Stocks";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_FOURTH_CONDITION = "ST_1_Cndt_4_Intraday_Sell_Side_Retested_iFVG_Statergy_Step_4_Retesting";
+    public static final String TAB_ALERTPAGE_NAME_ST_1_FIFTH_CONDITION = "ST_1_Cndt_5_Sell_Side_Step_5_If_Price_Closed_Above_Buy_FVG_Then_Remove_Stocks";
     public static final String TAB_ALERTPAGE_NAME_ST_1_SECOND_CONDITION_PART_B = "";
 
 
@@ -67,17 +67,29 @@ public class Constants {
     public static final String DATA_FOLDER_PATH = System.getProperty("user.dir") + "/src/main/resources/data/";
     public static String TEXTFILE_PATH_ST1_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST1_Cndt2_Watchlist_Updates_From_Cndt_1.txt";
     public static String TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_UPDATES_FROM_CNDT_2 = "ST1_Cndt3_Watchlist_Updates_From_Cndt_2.txt";
-    public static String TEXTFILE_PATH_ST1_CNDT4_WATCHLIST_UPDATES_FROM_CNDT_3 = "ST1_Cndt4_Watchlist_Updates_From_Cndt_3.txt";
-    public static String TEXTFILE_PATH_ST1_CNDT5_WATCHLIST_STOCKS_ADDITION_UPDATES_FROM_CNDT_4 = "ST1_Cndt5_Watchlist_Stocks_addition_Updates_From_Cndt_4.txt";
-    public static String TEXTFILE_PATH_ST1_CNDT5_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_CNDT_5 = "ST1_Cndt5_Watchlist_Stocks_Removal_Updates_From_Cndt_5.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_FAILED_OF_IFVG_CNDT_3 =
+            "ST1_Cndt3_Watchlist_Stocks_Removal_Updates_From_Failed_Of_iFVG_Cndt_3.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT4_WATCHLIST_STOCKS_UPDATES_FROM_RETEST_IFVG_CNDT_4 = "ST1_Cndt4_Watchlist_Updates_From_Cndt_4.txt";
+    public static String TEXTFILE_PATH_ST1_CNDT4_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_FAILED_OF_IFVG_CNDT_5 =
+            "ST1_Cndt4_Watchlist_Stocks_Removal_Updates_From_Cndt_5.txt";
+
+//    public static String TEXTFILE_PATH_ST1_CNDT4_WATCHLIST_UPDATES_FROM_CNDT_3 = "ST1_Cndt4_Watchlist_Updates_From_Cndt_3.txt";
+//    public static String TEXTFILE_PATH_ST1_CNDT5_WATCHLIST_STOCKS_ADDITION_UPDATES_FROM_CNDT_4 = "ST1_Cndt5_Watchlist_Stocks_addition_Updates_From_Cndt_4.txt";
+//    public static String TEXTFILE_PATH_ST1_CNDT5_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_CNDT_5 = "ST1_Cndt5_Watchlist_Stocks_Removal_Updates_From_Cndt_5.txt";
     public static String TEXTFILE_PATH_ST1_CNDT2_PARTICULAR_TIME_FRAME_WATCHLIST_UPDATES = "ST1_Cndt2_Particular_TimeFrame_Watchlist_Updates.txt";
     public static String TEXTFILE_PATH_ST1_CNDT2_HEADER_DEFAULT_F_AND_O_WATCHLIST_FOR_REMOVED_STOCKS_UPDATES = "ST1_Cndt2_Header_Default_F_Aand_O_Watchlist_For_Removed_Stocks_Updates.txt";
     public static String TEXTFILE_PATH_ST1_CNDT2_B_STOCK_ALERTS_UPDATES = "ST1_Cndt2_B_Stock_Alert_Updates.txt";
     public static String TEXTFILE_PATH_ST2_CNDT2_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST2_Cndt2_Watchlist_Updates_From_Cndt_1.txt";
     public static String TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES_FROM_CNDT_2 = "ST2_Cndt3_Watchlist_Updates_From_Cndt_2.txt";
-    public static String TEXTFILE_PATH_ST2_CNDT4_WATCHLIST_UPDATES_FROM_CNDT_3 = "ST2_Cndt4_Watchlist_Updates_From_Cndt_3.txt";
-    public static String TEXTFILE_PATH_ST2_CNDT5_WATCHLIST_STOCKS_ADDITION_UPDATES_FROM_CNDT_4 = "ST2_Cndt5_Watchlist_Stocks_addition_Updates_From_Cndt_4.txt";
-    public static String TEXTFILE_PATH_ST2_CNDT5_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_CNDT_5 = "ST2_Cndt5_Watchlist_Stocks_Removal_Updates_From_Cndt_5.txt";
+    public static String TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_FAILED_OF_IFVG_CNDT_3 =
+            "ST2_Cndt3_Watchlist_Stocks_Removal_Updates_From_Failed_Of_iFVG_Cndt_3.txt";
+    public static String TEXTFILE_PATH_ST2_CNDT4_WATCHLIST_STOCKS_UPDATES_FROM_RETEST_IFVG_CNDT_4 = "ST2_Cndt4_Watchlist_Updates_From_Cndt_4.txt";
+    public static String TEXTFILE_PATH_ST2_CNDT4_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_FAILED_OF_IFVG_CNDT_5 =
+            "ST2_Cndt4_Watchlist_Stocks_Removal_Updates_From_Cndt_5.txt";
+
+//    public static String TEXTFILE_PATH_ST2_CNDT4_WATCHLIST_UPDATES_FROM_CNDT_3 = "ST2_Cndt4_Watchlist_Updates_From_Cndt_3.txt";
+//    public static String TEXTFILE_PATH_ST2_CNDT5_WATCHLIST_STOCKS_ADDITION_UPDATES_FROM_CNDT_4 = "ST2_Cndt5_Watchlist_Stocks_addition_Updates_From_Cndt_4.txt";
+//    public static String TEXTFILE_PATH_ST2_CNDT5_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_CNDT_5 = "ST2_Cndt5_Watchlist_Stocks_Removal_Updates_From_Cndt_5.txt";
 
 //    public static String TEXTFILE_PATH_ST2_CNDT2_MAIN_HEADER_WATCHLIST_UPDATES_FROM_CNDT_1 = "ST2_Cndt2_Main_Header_Watchlist_Updates_From_Cndt_1.txt";
     public static String TEXTFILE_PATH_ST2_CNDT3_WATCHLIST_UPDATES = "ST2_Cndt3_Watchlist_Updates.txt";

@@ -26,56 +26,31 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
     WatchlistPage watchlistPage = new WatchlistPage();
 
-    // Sell_Trades_From_Logic_M_Pattern
-    public void Sell_Trades_From_Logic_M_Pattern() {
+    // Sell_Trades_From_Retested_iFVG_Strategy
+    public void Sell_Trades_From_Retested_iFVG_Strategy() {
 
-        ReportUtil.report( true, "INFO", "-- Test case 1 -- Starting -- Sell_Trades_From_Logic_M_Pattern",  "");
+        ReportUtil.report( true, "INFO", "-- Test case 1 -- Starting -- Sell_Trades_From_Retested_iFVG_Strategy",  "");
 
         try {
 
             Step_1_Checking_ST1_CONDITION_1_Alerts();
 
-            /*ST_1_Cndt_2_Intraday_Sell_Side_M_Pattern_Statergy_Step_2_Price_Close_Below_Buy_FVG_And_SMA
-            [0] 5 minute Close < [0] 5 minute Sma ( [0] 5 minute Close , 12 )
-            And [0] 5 minute Close < [-2] 5 minute High of Condition 1
-            Steps to perform in code:
-            1.Add Stocks to 'ST1_Cndt_3_Watchlist' for further scan
-            */
             Step_2_Checking_ST1_CONDITION_2_Alerts();
 
-            /*ST_1_Cndt_3 : Scan Criteria :
-            ST_1_Cndt_3_Intraday_Sell_Side_M_Pattern_Statergy_Step_3_Price_Close_above_Buy_FVG_And_SMA,
-            [0] 5 minute Close > [0] 5 minute Sma ( [0] 5 minute Close , 12 )  and
-            [0] 5 minute Close > [=1] 5 minute Low of Condition 1
-            Steps to perform in code:
-            1. Add Stocks to 'ST1_Cndt_4_Watchlist' for further scan
-             */
             Step_3_Checking_ST1_CONDITION_3_Alerts();
 
-            /*ST_1_Cndt_4 : Scan Criteria :
-            ST_1_Cndt_4_Intraday_Sell_Side_M_Pattern_Statergy_Step_4_Price_Close_Below_Buy_FVG_And_SMA
-            [0] 5 minute Close < [0] 5 minute Sma ( [0] 5 minute Close , 12 ) and
-            [0] 5 minute Close < [-2] 5 minute High  of Condition 1
-            Steps to perform in code:
-            1. Add Stocks to 'ST1_Cndt_5_Watchlist' for further scan
-             */
             Step_4_Checking_ST1_CONDITION_4_Alerts();
 
-            /*ST_1_Cndt_5 :Scan Criteria :
-            ST_1_Cndt_5_Sell_Side_M_Pattern_Step_5_If_Price_Closed_Above_Buy_FVG_Then_Remove_Stocks
-            [0] 5 minute Close > [=1] 5 minute Low  of Condition 1
-            Steps to perform in code:
-            1. Remove Stocks from 'ST1_Cndt_5_Watchlist'
-             */
             Step_5_Checking_ST1_CONDITION_5_Alerts();
+
 
         }catch (InterruptedException e) {
 
-            System.out.println("Test case 1 Sell_Trades_From_Logic_M_Pattern: " + e.getMessage());
-            ReportUtil.report( false, "FAIL", "Test case 1 Sell_Trades_From_Logic_M_Pattern, ",  e.getMessage());
+            System.out.println("Test case 1 Sell_Trades_From_Retested_iFVG_Strategy: " + e.getMessage());
+            ReportUtil.report( false, "FAIL", "Test case 1 Sell_Trades_From_Retested_iFVG_Strategy, ",  e.getMessage());
         }
 
-        ReportUtil.report( true, "INFO", "-- Test case 1 -- Ending -- Sell_Trades_From_Logic_M_Pattern",  "");
+        ReportUtil.report( true, "INFO", "-- Test case 1 -- Ending -- Sell_Trades_From_Retested_iFVG_Strategy",  "");
 
     }
 
@@ -226,14 +201,14 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
         String Comments = "";
 
-        String ST1_Cndt_4_Watchlist_Name = prop.getProperty("ST1_Cndt_4_Watchlist_Name");
-        String ST1_Cndt_4_Watchlist_Url = prop.getProperty("ST1_Cndt_4_Watchlist_Url");
+        String ST1_Cndt_3_Watchlist_Name = prop.getProperty("ST1_Cndt_3_Watchlist_Name");
+        String ST1_Cndt_3_Watchlist_Url = prop.getProperty("ST1_Cndt_3_Watchlist_Url");
 
         // </editor-fold>
 
         try {
 
-            // If new alert displayed for strategy : ST1_CONDITION_3 then add it to watchlist of strategy : ST1_Cndt4
+            // If new alert displayed for strategy : ST1_CONDITION_5 then remove stocks from ST1_Cndt_5_Watchlist
             if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_3_Step_3,
                     Constants.TAB_ALERTPAGE_NAME_ST_1_THIRD_CONDITION,false)) {
 
@@ -251,34 +226,29 @@ public class Test_Case_Stratergy_1 extends BaseTest {
                     stocks = new String[]{Alerts_Stock_Names};
                 }
 
-                // <editor-fold desc=" Step 3 - Sub 1 - Adding stocks from alert ST1_CONDITION_3 to ST1_Cndt4 watchlist ">
-                ReportUtil.report(true, "INFO", "Step 3 - Sub 1 - Adding stocks from alert ST1_CONDITION_3 to ST1_Cndt4 watchlist ", "");
+                // <editor-fold desc=" Step 2 - Sub 3 - Remove filtered stock from watchlist 'ST1_Cndt_5_Watchlist'  ">
+                ReportUtil.report(true, "INFO", "Step 3 - Sub 1 - Remove filtered stock from watchlist 'ST1_Cndt_3_Watchlist' ", "");
 
-                /// Upload Stocks using Auto_it App and textfile
-                watchlistPage.upload_Stock_List_TextFile_Using_Auto_It(Constants.TEXTFILE_PATH_FOR_RUNTIME_STOCKS_FOR_WATCHLIST,
-                        Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-                        ST1_Cndt_4_Watchlist_Name, ST1_Cndt_4_Watchlist_Url, Alerts_Stock_Names);
-
-                // add Stocks from "ST1_CONDITION_3 to watchlist of ST1_Cndt4
-//                watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-//                        ST1_Cndt_4_Watchlist_Name, ST1_Cndt_4_Watchlist_Url, stocks);
+                watchlistPage.delete_Stock_From_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
+                        ST1_Cndt_3_Watchlist_Name, ST1_Cndt_3_Watchlist_Url, stocks);
 
                 // Update Stock Alerts to  output textfile for end of the day validation
-                Comments = Constants.ST1_CONDITION_3_Step_3 + "- Sub 1 -" + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT4_WATCHLIST_UPDATES_FROM_CNDT_3,
-                        Comments, ST1_Cndt_4_Watchlist_Name,
-                        ST1_Cndt_4_Watchlist_Url, Alerts_Stock_Names);
+                Comments = Constants.ST1_CONDITION_3_Step_3 + "- Sub 1 -" + System.lineSeparator() + Constants.ACTION_STOCKS_REMOVED ;
+
+                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT3_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_FAILED_OF_IFVG_CNDT_3,
+                        Comments, ST1_Cndt_3_Watchlist_Name,
+                        ST1_Cndt_3_Watchlist_Url, Alerts_Stock_Names);
                 // </editor-fold>
 
             }
 
         } catch (IOException e) {
 
-            System.out.println("Step_3_Checking_ST1_CONDITION_3_Alerts: " + e.getMessage());
-            ReportUtil.report(false, "FAIL", " Step_3_Checking_ST1_CONDITION_3_Alerts, ", e.getMessage());
+            System.out.println("Step_5_Checking_ST1_CONDITION_5_Alerts: " + e.getMessage());
+            ReportUtil.report(false, "FAIL", " Step_5_Checking_ST1_CONDITION_5_Alerts, ", e.getMessage());
         }
 
-        ReportUtil.report(true, "INFO", "Ending -- Step_3_Checking_ST1_CONDITION_3_Alerts", "");
+        ReportUtil.report(true, "INFO", "Ending -- Step_5_Checking_ST1_CONDITION_5_Alerts", "");
     }
 
     public void Step_4_Checking_ST1_CONDITION_4_Alerts() throws InterruptedException {
@@ -291,8 +261,8 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
         String Comments = "";
 
-        String ST1_Cndt_5_Watchlist_Name = prop.getProperty("ST1_Cndt_5_Watchlist_Name");
-        String ST1_Cndt_5_Watchlist_Url = prop.getProperty("ST1_Cndt_5_Watchlist_Url");
+        String ST1_Cndt_4_Watchlist_Name = prop.getProperty("ST1_Cndt_4_Watchlist_Name");
+        String ST1_Cndt_4_Watchlist_Url = prop.getProperty("ST1_Cndt_4_Watchlist_Url");
 
         // </editor-fold>
 
@@ -317,12 +287,12 @@ public class Test_Case_Stratergy_1 extends BaseTest {
                 }
 
                 // <editor-fold desc=" Step 2 - Sub 1 - Adding stocks from alert ST1_CONDITION_4 to ST1_Cndt5 watchlist ">
-                ReportUtil.report(true, "INFO", "Step 4 - Sub 1 - Adding stocks from alert ST1_CONDITION_4 to ST1_Cndt5 watchlist ", "");
+                ReportUtil.report(true, "INFO", "Step 4 - Sub 1 - Adding stocks from alert ST1_CONDITION_4 to ST1_Cndt4 watchlist ", "");
 
                 /// Upload Stocks using Auto_it App and textfile
                 watchlistPage.upload_Stock_List_TextFile_Using_Auto_It(Constants.TEXTFILE_PATH_FOR_RUNTIME_STOCKS_FOR_WATCHLIST,
                         Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-                        ST1_Cndt_5_Watchlist_Name, ST1_Cndt_5_Watchlist_Url, Alerts_Stock_Names);
+                        ST1_Cndt_4_Watchlist_Name, ST1_Cndt_4_Watchlist_Url, Alerts_Stock_Names);
 
                 // add Stocks from "ST1_CONDITION_3 to watchlist of ST1_Cndt4
 //                watchlistPage.add_Stocks_To_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
@@ -330,9 +300,9 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
                 // Update Stock Alerts to  output textfile for end of the day validation
                 Comments = Constants.ST1_CONDITION_4_Step_4 + "- Sub 1 -" + System.lineSeparator() + Constants.ACTION_STOCKS_ADDED ;
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT5_WATCHLIST_STOCKS_ADDITION_UPDATES_FROM_CNDT_4,
-                        Comments, ST1_Cndt_5_Watchlist_Name,
-                        ST1_Cndt_5_Watchlist_Url, Alerts_Stock_Names);
+                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT4_WATCHLIST_STOCKS_UPDATES_FROM_RETEST_IFVG_CNDT_4,
+                        Comments, ST1_Cndt_4_Watchlist_Name,
+                        ST1_Cndt_4_Watchlist_Url, Alerts_Stock_Names);
                 // </editor-fold>
 
             }
@@ -356,14 +326,14 @@ public class Test_Case_Stratergy_1 extends BaseTest {
 
         String Comments = "";
 
-        String ST1_Cndt_5_Watchlist_Name = prop.getProperty("ST1_Cndt_5_Watchlist_Name");
-        String ST1_Cndt_5_Watchlist_Url = prop.getProperty("ST1_Cndt_5_Watchlist_Url");
+        String ST1_Cndt_4_Watchlist_Name = prop.getProperty("ST1_Cndt_4_Watchlist_Name");
+        String ST1_Cndt_4_Watchlist_Url = prop.getProperty("ST1_Cndt_4_Watchlist_Url");
 
         // </editor-fold>
 
         try {
 
-            // If new alert displayed for strategy : ST1_CONDITION_5 then remove stocks from ST1_Cndt_5_Watchlist
+            // If new alert displayed for strategy : ST1_CONDITION_5 then remove stocks from ST1_Cndt_4_Watchlist
             if (alertPage.verify_And_Get_Latest_Alert_Displayed_For_Strategies(Constants.ST1_CONDITION_5_Step_5,
                     Constants.TAB_ALERTPAGE_NAME_ST_1_FIFTH_CONDITION,false)) {
 
@@ -382,17 +352,17 @@ public class Test_Case_Stratergy_1 extends BaseTest {
                 }
 
                 // <editor-fold desc=" Step 2 - Sub 3 - Remove filtered stock from watchlist 'ST1_Cndt_5_Watchlist'  ">
-                ReportUtil.report(true, "INFO", "Step 5 - Sub 1 - Remove filtered stock from watchlist 'ST1_Cndt_5_Watchlist' ", "");
+                ReportUtil.report(true, "INFO", "Step 5 - Sub 1 - Remove filtered stock from watchlist 'ST1_Cndt_4_Watchlist' ", "");
 
                 watchlistPage.delete_Stock_From_Watchlist(Constants.TAB_DEFAULT_WATCHLIST_PAGE,
-                        ST1_Cndt_5_Watchlist_Name, ST1_Cndt_5_Watchlist_Url, stocks);
+                        ST1_Cndt_4_Watchlist_Name, ST1_Cndt_4_Watchlist_Url, stocks);
 
                 // Update Stock Alerts to  output textfile for end of the day validation
                 Comments = Constants.ST1_CONDITION_5_Step_5 + "- Sub 1 -" + System.lineSeparator() + Constants.ACTION_STOCKS_REMOVED ;
 
-                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT5_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_CNDT_5,
-                        Comments, ST1_Cndt_5_Watchlist_Name,
-                        ST1_Cndt_5_Watchlist_Url, Alerts_Stock_Names);
+                FileAndFolderFunctions.update_Output_Text_File_for_Alert_Results(Constants.TEXTFILE_PATH_ST1_CNDT4_WATCHLIST_STOCKS_REMOVAL_UPDATES_FROM_FAILED_OF_IFVG_CNDT_5,
+                        Comments, ST1_Cndt_4_Watchlist_Name,
+                        ST1_Cndt_4_Watchlist_Url, Alerts_Stock_Names);
                 // </editor-fold>
 
             }

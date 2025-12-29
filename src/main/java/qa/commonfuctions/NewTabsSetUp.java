@@ -213,7 +213,7 @@ public class NewTabsSetUp extends BaseTest {
                     this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIFTH_CONDITION );
                     break;
 
-                //ST5
+//                ST5
                 case Constants.TAB_ALERTPAGE_NAME_ST_5_FIRST_CONDITION:
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
                     browser_Refresh();
@@ -226,7 +226,7 @@ public class NewTabsSetUp extends BaseTest {
                     this.switchToTab(Integer.parseInt(RunTimeDataStore.TabsName.getGlobal(tabName)));
                     browser_Refresh();
                     Thread.sleep(1000);
-//                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_6_FIRST_CONDITION );
+                    this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_6_FIRST_CONDITION );
                     break;
 
 //                //Default Watchlist tab
@@ -322,11 +322,11 @@ public class NewTabsSetUp extends BaseTest {
             this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FOURTH_CONDITION);
             RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FOURTH_CONDITION,"10");
 
-            this.switchToTab(11);
+            this.switchToTab(10);
             this.setUrl(prop.getProperty("ST2_Cndt5_Alert_Page_Url"));
             this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_2_FIFTH_CONDITION);
-            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FIFTH_CONDITION,"11");
-//
+            RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_2_FIFTH_CONDITION,"10");
+////
             // ST5
             this.switchToTab(12);
             this.setUrl(prop.getProperty("ST5_Cndt1_Alert_Page_Url"));
@@ -336,7 +336,7 @@ public class NewTabsSetUp extends BaseTest {
             // ST6
             this.switchToTab(13);
             this.setUrl(prop.getProperty("ST6_Cndt1_Alert_Page_Url"));
-//            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_6_FIRST_CONDITION);
+            this.verifySelectedTab(Constants.WEBPAGE_ALERT,AlertPage.WebElement_Alert_Name_Link, Constants.TAB_ALERTPAGE_NAME_ST_6_FIRST_CONDITION);
             RunTimeDataStore.TabsName.putGlobal(Constants.TAB_ALERTPAGE_NAME_ST_6_FIRST_CONDITION,"13");
 
 
