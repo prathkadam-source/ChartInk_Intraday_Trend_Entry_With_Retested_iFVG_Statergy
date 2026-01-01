@@ -243,7 +243,11 @@ public class AlertPage extends BaseTest {
             }
 
             String current_Year= Integer.toString(LocalDate.now().getYear());
-            final_Date =final_Date.replace(current_Year, current_Year+',');
+            if (final_Date.toString().contains("2025")) {
+                final_Date = final_Date.replace("2025",  "2025,");
+            }else{
+                final_Date =final_Date.replace(current_Year, current_Year+',');
+            }
 
             System.out.println("Latest alert TimeStamp : "+ final_Date);
             ReportUtil.report( true, "INFO", "Latest alert TimeStamp :, ",  final_Date);
